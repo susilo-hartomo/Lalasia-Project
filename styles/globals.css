@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer components {
+    .label {
+        font-family: 'EudoxusSans-Bold';
+        font-style: normal;
+        font-weight: 700;
+        line-height: 130%;
+    }
+    .paragraph {
+        font-family: 'EudoxusSans-reguler';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 180%;
+    }
+}

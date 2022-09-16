@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'EudoxusSans-Medium';
+    src: url(../assets/fonts/Eudoxus-Sans-font/EudoxusSans-Medium.woff);
+}
+
+@font-face {
+    font-family: 'EudoxusSans-Bold';
+    src: url(../assets/fonts/Eudoxus-Sans-font/EudoxusSans-Bold.woff);
+}
+
+@font-face {
+    font-family: 'EudoxusSans-Reguler';
+    src: url(../assets/fonts/Eudoxus-Sans-font/EudoxusSans-Regular.woff);
+}
