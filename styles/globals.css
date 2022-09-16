@@ -2,10 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 @layer components {
+    .heading {
+        font-family: 'EudoxusSans-Bold';
+        color: 'title-1';
+        opacity: 80%;
+        line-height: 130%;
+    }
+    ,
     .label {
         font-family: 'EudoxusSans-Bold';
         font-style: normal;
         font-weight: 700;
+        opacity: 80%;
         line-height: 130%;
     }
     .paragraph {

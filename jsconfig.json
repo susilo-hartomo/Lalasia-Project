@@ -12,10 +12,13 @@
         "assets/images/*"
       ],
       "@/icons/*": [
-        "assets/images/*"
+        "assets/icons/*"
       ],
       "@/styles/*": [
         "styles/*"
+      ],
+      "@/constants/*": [
+        "constants/*"
       ],
       "@/middleware/*": [
         "middleware/*"

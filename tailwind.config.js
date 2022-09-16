@@ -36,7 +36,7 @@ module.exports = {
 				'placholder-4': '#FCFCFC',
 				'placholder-5': '#FDFDFD',
 				'placholder-6': '#FEFEFE',
-				'screen-light-white': '#F3F3F3',
+				'light-white': '#F3F3F3',
 			},
 		},
 		fontFamily: {
@@ -49,38 +49,34 @@ module.exports = {
 			addBase({
 				h1: {
 					fontSize: '64px',
-					fontFamily: 'EudoxusSans-Bold',
-					color: theme('title-1'),
-					opacity: '80%',
-					lineHeight: '130%',
 				},
 				h2: {
 					fontSize: '44px',
-					fontFamily: 'EudoxusSans-Bold',
-					color: theme('title-1'),
-					opacity: '80%',
-					lineHeight: '130%',
 				},
 				h3: {
 					fontSize: '24px',
-					fontFamily: 'EudoxusSans-Bold',
-					color: theme('title-1'),
-					opacity: '80%',
-					lineHeight: '130%',
 				},
 				h4: {
 					fontSize: '20px',
-					fontFamily: 'EudoxusSans-Bold',
+				},
+				h5: {
+					fontSize: '16px',
+				},
+
+				paragraph: {
+					fontFamily: 'EudoxusSans-Medium',
 					color: theme('title-1'),
 					opacity: '80%',
 					lineHeight: '130%',
 				},
-				h5: {
+				par1: {
+					fontSize: '18px',
+				},
+				par2: {
 					fontSize: '16px',
-					fontFamily: 'EudoxusSans-Bold',
-					color: theme('title-1'),
-					opacity: '80%',
-					lineHeight: '130%',
+				},
+				par3: {
+					fontSize: '14px',
 				},
 			});
 		}),
