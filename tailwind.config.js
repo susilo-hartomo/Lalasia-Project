@@ -49,14 +49,11 @@ module.exports = {
 			addBase({
 				h1: {
 					fontSize: '26px',
-					'@media(min - width: 640px)': {
-						fontSize: '44px'
+					'@media (min-width: 640px)': {
+						fontSize: '44px',
 					},
-					'@media(min - width: 640px)': {
-						fontSize: '44px'
-					},
-					'@media(min - width: 640px)': {
-						fontSize: '44px'
+					'@media (min-width: 1024px)': {
+						fontSize: '64px',
 					},
 				},
 				h2: {
@@ -73,21 +70,16 @@ module.exports = {
 				},
 				p: {
 					fontFamily: 'EudoxusSans-reguler',
-					color: theme('title-1'),
 					opacity: '80%',
-					lineHeight: '130%',
-				},
-				par1: {
+					lineHeight: '180%',
+					fontWeight: 500,
 					fontSize: '14px',
-					'@media (min-width: 500px)': {
-						fontSize: '18px'
-					}
-				},
-				par2: {
-					fontSize: '16px',
-				},
-				par3: {
-					fontSize: '14px',
+					'@media (min-width: 640px)': {
+						fontSize: '16px',
+					},
+					'@media (min-width: 1024px)': {
+						fontSize: '18px',
+					},
 				},
 			});
 		}),
