@@ -48,13 +48,15 @@ module.exports = {
 		plugin(function ({ addBase, theme }) {
 			addBase({
 				h1: {
-					color: theme('title-1'),
 					fontSize: '26px',
-					'@media (min-width: 640px)': {
-						fontSize: '44px',
+					'@media(min - width: 640px)': {
+						fontSize: '44px'
 					},
-					'@media (min-width: 1024px)': {
-						fontSize: '64px',
+					'@media(min - width: 640px)': {
+						fontSize: '44px'
+					},
+					'@media(min - width: 640px)': {
+						fontSize: '44px'
 					},
 				},
 				h2: {
@@ -76,7 +78,10 @@ module.exports = {
 					lineHeight: '130%',
 				},
 				par1: {
-					fontSize: '18px',
+					fontSize: '14px',
+					'@media (min-width: 500px)': {
+						fontSize: '18px'
+					}
 				},
 				par2: {
 					fontSize: '16px',
