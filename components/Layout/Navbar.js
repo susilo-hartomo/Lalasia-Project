@@ -1,11 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 
-import brandImg from '@/images/lalasia_brand_img.svg';
-import brandText from '@/images/lalasia_brand_text.svg';
-import chartIcn from '@/icons/chart_ic.svg';
-import userIcn from '@/icons/user_ic.svg';
+import { brandImg, brandText } from '../../assets/images';
+import { humbergerIcn, cartIcn, userIcn } from '../../assets/icons';
 
 import { navlist } from '../../constants';
 
@@ -20,14 +19,16 @@ export default function Navbar() {
 	);
 
 	const renderNavlink = () => {
+		const router = useRouter();
+
 		return (
-			<nav className='flex'>
+			<nav className='flex h-full'>
 				{navlist.map((item, index) => (
 					<Link href={item.route} key={index}>
 						<a
-							className={`paragraph par-1 ${
-								index === 0 ? 'mr-[30px]' : index === navlist.length - 1 ? 'ml-[30px]' : `mx-[30px]`
-							}`}>
+							className={`paragraph par-1 h-full leading-[7.5rem] ${
+								item.route == router.pathname ? 'text-primary-1 border-b-4 border-primary-1' : null
+							} ${index === 0 ? 'mr-[30px]' : index === navlist.length - 1 ? 'ml-[30px]' : `mx-[30px]`}`}>
 							{item.path}
 						</a>
 					</Link>
@@ -37,17 +38,22 @@ export default function Navbar() {
 	};
 
 	const renderAction = () => (
-		<div className='flex items-center'>
-			<Image src={chartIcn} alt='chart icon' width={30} height={30} />
-			<div className='ml-6'>
-				<Image src={userIcn} alt='user icon' width={30} height={30} />
+		<div>
+			<div className='lg:hidden'>
+				<Image src={humbergerIcn} alt='chart icon' width={30} height={30} />
+			</div>
+			<div className='lg:flex items-center hidden'>
+				<Image src={cartIcn} alt='chart icon' width={30} height={30} />
+				<div className='ml-6'>
+					<Image src={userIcn} alt='user icon' width={30} height={30} />
+				</div>
 			</div>
 		</div>
 	);
 
 	return (
 		<header className='border-b-2 border-solid border-light-white'>
-			<div className='h-[120px] container mx-auto flex items-center justify-between'>
+			<div className='h-[120px] container px-4 lg:px-0 mx-auto flex items-center justify-between'>
 				{renderBrand()}
 				{renderNavlink()}
 				{renderAction()}

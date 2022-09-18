@@ -1,7 +1,4 @@
-import brandImg from './lalasia_brand_img.png';
-import brandText from './lalasia_brand_text.png';
+import brandImg from './lalasia_brand_img.svg';
+import brandText from './lalasia_brand_text.svg';
 
-export default {
-	brandImg,
-	brandText,
-};
+export { brandImg, brandText };
