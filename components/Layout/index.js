@@ -4,9 +4,7 @@ import Head from 'next/head';
 import Navbar from './Navbar';
 import Footer from './Footer';
 
-export default function Layout({ children }) {
-	const title = '',
-		content = '';
+export default function Layout({ children, title, content }) {
 	useEffect(() => {
 		window.scrollTo({
 			top: 0,

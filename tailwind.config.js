@@ -48,7 +48,14 @@ module.exports = {
 		plugin(function ({ addBase, theme }) {
 			addBase({
 				h1: {
-					fontSize: '64px',
+					color: theme('title-1'),
+					fontSize: '26px',
+					'@media (min-width: 640px)': {
+						fontSize: '44px',
+					},
+					'@media (min-width: 1024px)': {
+						fontSize: '64px',
+					},
 				},
 				h2: {
 					fontSize: '44px',
@@ -62,9 +69,8 @@ module.exports = {
 				h5: {
 					fontSize: '16px',
 				},
-
-				paragraph: {
-					fontFamily: 'EudoxusSans-Medium',
+				p: {
+					fontFamily: 'EudoxusSans-reguler',
 					color: theme('title-1'),
 					opacity: '80%',
 					lineHeight: '130%',
