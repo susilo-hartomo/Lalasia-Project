@@ -36,7 +36,7 @@ module.exports = {
 				'placholder-4': '#FCFCFC',
 				'placholder-5': '#FDFDFD',
 				'placholder-6': '#FEFEFE',
-				'screen-light-white': '#F3F3F3',
+				'light-white': '#F3F3F3',
 			},
 		},
 		fontFamily: {
@@ -48,39 +48,38 @@ module.exports = {
 		plugin(function ({ addBase, theme }) {
 			addBase({
 				h1: {
-					fontSize: '64px',
-					fontFamily: 'EudoxusSans-Bold',
-					color: theme('title-1'),
-					opacity: '80%',
-					lineHeight: '130%',
+					fontSize: '26px',
+					'@media (min-width: 640px)': {
+						fontSize: '44px',
+					},
+					'@media (min-width: 1024px)': {
+						fontSize: '64px',
+					},
 				},
 				h2: {
 					fontSize: '44px',
-					fontFamily: 'EudoxusSans-Bold',
-					color: theme('title-1'),
-					opacity: '80%',
-					lineHeight: '130%',
 				},
 				h3: {
 					fontSize: '24px',
-					fontFamily: 'EudoxusSans-Bold',
-					color: theme('title-1'),
-					opacity: '80%',
-					lineHeight: '130%',
 				},
 				h4: {
 					fontSize: '20px',
-					fontFamily: 'EudoxusSans-Bold',
-					color: theme('title-1'),
-					opacity: '80%',
-					lineHeight: '130%',
 				},
 				h5: {
 					fontSize: '16px',
-					fontFamily: 'EudoxusSans-Bold',
-					color: theme('title-1'),
+				},
+				p: {
+					fontFamily: 'EudoxusSans-reguler',
 					opacity: '80%',
-					lineHeight: '130%',
+					lineHeight: '180%',
+					fontWeight: 500,
+					fontSize: '14px',
+					'@media (min-width: 640px)': {
+						fontSize: '16px',
+					},
+					'@media (min-width: 1024px)': {
+						fontSize: '18px',
+					},
 				},
 			});
 		}),
