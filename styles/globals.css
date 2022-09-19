@@ -15,3 +15,15 @@
         line-height: 130%;
     }
 }
+
+progress::-moz-progress-bar {
+    background-color: white 0.8;
+}
+
+progress::-webkit-progress-value {
+    background-color: white 0.8;
+}
+
+progress {
+    background-color: white 0.8;
+}
