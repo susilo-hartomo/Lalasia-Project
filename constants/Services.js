@@ -2,7 +2,7 @@ import {
   servicePortofolioImg1,
   servicePortofolioImg2,
   servicePortofolioImg3,
-} from "../../assets/images";
+} from "../assets/images";
 
 const datasListService = [
   {
