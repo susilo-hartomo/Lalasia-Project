@@ -12,17 +12,15 @@ export default function Navbar() {
 	const router = useRouter();
 	const [isShowMobileNavbar, setIsShowMobileNavbar] = useState(false);
 	const [scrollTop, setScrollTop] = useState(0);
-	console.log('scrollTop: ', scrollTop);
 
 	const onScroll = (e) => {
 		setScrollTop(e.target.documentElement.scrollTop);
-		// setScrolling(e.target.documentElement.scrollTop > scrollTop);
 	};
 
 	useEffect(() => {
 		window.addEventListener('scroll', onScroll);
 		return () => {
-			// window.removeEventListener('scroll', onScroll);
+			window.removeEventListener('scroll', onScroll);
 		};
 	}, [scrollTop]);
 
