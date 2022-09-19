@@ -2,6 +2,8 @@ import brandImg from './lalasia_brand_img.svg';
 import brandText from './lalasia_brand_text.svg';
 import abstractStars from './Sketch-annotation-element-stroke-abstract-stars-plus-wink-filled.svg';
 import spiral from './Sketch-annotation-element-stroke-line-arrow-spiral-down-5.svg';
+import searchNormal from './search-normal.svg';
+import banner from './banerImage.png';
 import andrewTeam from './andrew_team.svg';
 import jesseTeam from './jesse_team.svg';
 import margaretTeam from './margaret_team.svg';
@@ -14,6 +16,8 @@ export {
 	brandText,
 	abstractStars,
 	spiral,
+	searchNormal,
+	banner,
 	andrewTeam,
 	jesseTeam,
 	royTeam,

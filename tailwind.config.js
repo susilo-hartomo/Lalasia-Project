@@ -52,9 +52,9 @@ module.exports = {
 					'@media (min-width: 640px)': {
 						fontSize: '44px',
 					},
-					'@media (min-width: 1024px)': {
-						fontSize: '64px',
-					},
+					'@media(min - width: 1024px)': {
+						fontSize: '64px'
+					}
 				},
 				h2: {
 					fontSize: '24px',
