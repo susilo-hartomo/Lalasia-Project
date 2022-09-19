@@ -57,20 +57,36 @@ module.exports = {
 					},
 				},
 				h2: {
-					fontSize: '44px',
+					fontSize: '24px',
+					'@media (min-width: 640px)': {
+						fontSize: '36px',
+					},
+					'@media (min-width: 1024px)': {
+						fontSize: '44px',
+					},
 				},
 				h3: {
 					fontSize: '24px',
+					'@media (min-width: 640px)': {
+						fontSize: '26px',
+					},
 				},
 				h4: {
 					fontSize: '20px',
 				},
 				h5: {
-					fontSize: '16px',
+					fontSize: '14px',
+					'@media (min-width: 640px)': {
+						fontSize: '16px',
+					},
+					'@media (min-width: 1024px)': {
+						fontSize: '18px',
+					},
 				},
 				p: {
 					fontFamily: 'EudoxusSans-reguler',
 					opacity: '80%',
+					color: theme('paragraph-1'),
 					lineHeight: '180%',
 					fontWeight: 500,
 					fontSize: '14px',
