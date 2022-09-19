@@ -70,7 +70,7 @@ function aboutUs() {
 
 	const renderOurTeam = () => {
 		return (
-			<div className='lg:my-[90px] px-4 lg:px-8 xl:px-0'>
+			<div className='lg:my-[90px] lg:px-8 xl:px-0'>
 				<div className='lg:my-[90px] px-4 lg:px-8 xl:px-0'>
 					<h5 className='text-secondary-1 mb-4'>Our Team</h5>
 					<div className='lg:flex  lg:gap-20 xl:gap-24 '>
@@ -85,7 +85,7 @@ function aboutUs() {
 						</div>
 					</div>
 
-					<div className='flex gap-8 flex-wrap justify-between mt-12'>
+					<div className='flex lg:gap-8 gap-2 flex-wrap justify-between mt-12'>
 						{OurTeam.map((item, index) => (
 							<ProfileOurTeamCard key={index} img={item.img} name={item.name} grade={item.grade} />
 						))}
@@ -97,9 +97,9 @@ function aboutUs() {
 
 	const renderInterest = () => {
 		return (
-			<div className='lg:my-[90px] px-4 lg:px-8 xl:px-0'>
+			<div className='lg:my-[90px] my-8 px-4 lg:px-8 xl:px-0'>
 				<div className='lg:flex  lg:gap-20 xl:gap-24 justify-between items-center'>
-					<h2 className='heading lg:w-1/3'>Are you interested work with us?</h2>
+					<h2 className='heading lg:w-1/3 w-4/5 mb-4 lg:mb-0'>Are you interested work with us?</h2>
 					<PrimaryButton text="Let's Talk" onClick={() => alert('press button')} icon={arrowRightIc} />
 				</div>
 			</div>
