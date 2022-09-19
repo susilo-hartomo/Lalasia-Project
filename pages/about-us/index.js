@@ -4,7 +4,11 @@ import React from 'react';
 import CountingDesc from '@/components/items/CountingDesc';
 import MissionDesc from '@/components/items/MissionDesc';
 
-import { callRecivedIc, messageIc, awardIc } from '../../assets/icons';
+import { callRecivedIc, messageIc, awardIc, arrowRightIc } from '../../assets/icons';
+
+import { OurTeam } from '../../constants';
+import ProfileOurTeamCard from '@/components/card/ProfileOurTeamCard';
+import PrimaryButton from '@/components/button/PrimaryButton';
 
 function aboutUs() {
 	const renderBanner = () => {
@@ -64,11 +68,51 @@ function aboutUs() {
 		);
 	};
 
+	const renderOurTeam = () => {
+		return (
+			<div className='lg:my-[90px] px-4 lg:px-8 xl:px-0'>
+				<div className='lg:my-[90px] px-4 lg:px-8 xl:px-0'>
+					<h5 className='text-secondary-1 mb-4'>Our Team</h5>
+					<div className='lg:flex  lg:gap-20 xl:gap-24 '>
+						<div className='lg:w-1/2'>
+							<h2 className='heading pr-6'>Meet our leading and strong team</h2>
+						</div>
+						<div className='lg:w-1/2 lg:pl-20'>
+							<p className='text-paragraph-1'>
+								Pellentesque etiam blandit in tincidunt at donec. Eget ipsum dignissim placerat nisi,
+								adipiscing mauris non purus parturient.
+							</p>
+						</div>
+					</div>
+
+					<div className='flex gap-8 flex-wrap justify-between mt-12'>
+						{OurTeam.map((item, index) => (
+							<ProfileOurTeamCard key={index} img={item.img} name={item.name} grade={item.grade} />
+						))}
+					</div>
+				</div>
+			</div>
+		);
+	};
+
+	const renderInterest = () => {
+		return (
+			<div className='lg:my-[90px] px-4 lg:px-8 xl:px-0'>
+				<div className='lg:flex  lg:gap-20 xl:gap-24 justify-between items-center'>
+					<h2 className='heading lg:w-1/3'>Are you interested work with us?</h2>
+					<PrimaryButton text="Let's Talk" onClick={() => alert('press button')} icon={arrowRightIc} />
+				</div>
+			</div>
+		);
+	};
+
 	return (
 		<Layout title='About Us' content='We are the one'>
 			<div className='container mx-auto px-2 lg:px-0'>
 				{renderBanner()}
 				{renderOurMission()}
+				{renderOurTeam()}
+				{renderInterest()}
 			</div>
 		</Layout>
 	);
