@@ -1,4 +1,5 @@
 import '@/styles/fonsts.css';
+import '@/styles/VideoPlayer.css';
 import '@/styles/globals.css';
 
 function MyApp({ Component, pageProps }) {

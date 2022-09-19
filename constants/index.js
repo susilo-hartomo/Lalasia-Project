@@ -1,3 +1,4 @@
 import { navlist } from './NavbarList';
+import { OurTeam } from './ourTeam';
 
-export { navlist };
+export { navlist, OurTeam };

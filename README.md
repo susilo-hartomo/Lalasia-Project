@@ -1,5 +1,16 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## Can U see Mee
+Link : [Lalasia](https://prismatic-pothos-b90742.netlify.app/)
+UI kit : [Figma](https://www.figma.com/community/file/1129496513774660135)
+
+## We are not allone
+1. Susilo  (FE / Project Manager / AboutUsPage)
+2. Arimukti (FE / HomePage)
+3. Tita (FE / ProductPage)
+4. Rofi (FE / ArticlePageyan)
+5. Akbar (FE / ServicePage)
+
 ## Getting Started
 
 First, run the development server:
