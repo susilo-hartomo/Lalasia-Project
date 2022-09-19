@@ -8,6 +8,7 @@ import margaretTeam from './margaret_team.svg';
 import royTeam from './roy_team.svg';
 import joneTeam from './jone_team.png';
 import graceTeam from './grace_team.png';
+import videoThumbnail from './videoThumbnail.png';
 
 export {
 	brandImg,
@@ -20,4 +21,5 @@ export {
 	margaretTeam,
 	joneTeam,
 	graceTeam,
+	videoThumbnail,
 };
