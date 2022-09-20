@@ -18,6 +18,10 @@ import bookshelf from "./bookshelf.png";
 import aestetic from "./aesteticChair.png";
 import lamp from "./smartLamp.png";
 import sofa from "./sofaEmpuk.png";
+import ourProduct1 from './ourProduct1.png';
+import ourProduct2 from './ourProduct2.png';
+import jane from './jane.svg';
+import cobo from './cobo.svg';
 import serviceBrandImg from "./services_brand_img.svg";
 import servicePortofolioImg1 from "./services_portofolio_img1.svg";
 import servicePortofolioImg2 from "./services_portofolio_img2.svg";
@@ -44,6 +48,10 @@ export {
   aestetic,
   lamp,
   sofa,
+  ourProduct1,
+	ourProduct2,
+	jane,
+	cobo
   serviceBrandImg,
   servicePortofolioImg1,
   servicePortofolioImg2,

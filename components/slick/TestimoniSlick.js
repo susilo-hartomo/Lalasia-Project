@@ -6,6 +6,8 @@ import ProductCard from '../card/ProductCard';
 import { products } from '../../constants/products';
 import Image from 'next/image';
 import { leftSlide, rightSlide } from '../../assets/icons';
+import { testimonial } from 'constants/testimonial';
+import TestimoniCard from '../card/TestimoniCard';
 
 function SampleNextArrow(props) {
 	const { className, style, onClick } = props;
@@ -21,6 +23,7 @@ function SampleNextArrow(props) {
 
 function SamplePrevArrow(props) {
 	const { className, style, onClick } = props;
+
 	return (
 		<div
 			className={`${className} z-20`}
@@ -31,7 +34,7 @@ function SamplePrevArrow(props) {
 	);
 }
 
-export default class ProductSlick extends Component {
+export default class TestimoniSlick extends Component {
 	render() {
 		const settings = {
 			className: 'center variable-width slider overflow-hidden',
@@ -39,51 +42,22 @@ export default class ProductSlick extends Component {
 			centerPadding: '265px',
 			infinite: true,
 			speed: 500,
-			slidesToShow: 2,
+			slidesToShow: 1,
 			slidesToScroll: 1,
 			nextArrow: <SampleNextArrow />,
 			prevArrow: <SamplePrevArrow />,
-			responsive: [
-				{
-					breakpoint: 1024,
-					settings: {
-						slidesToShow: 3,
-						slidesToScroll: 3,
-						infinite: true,
-						dots: true,
-					},
-				},
-				{
-					breakpoint: 600,
-					settings: {
-						slidesToShow: 2,
-						slidesToScroll: 2,
-						initialSlide: 2,
-					},
-				},
-				{
-					breakpoint: 480,
-					settings: {
-						slidesToShow: 1,
-						slidesToScroll: 1,
-						centerPadding: '10px',
-						nextArrow: null,
-						prevArrow: null,
-					},
-				},
-			],
 		};
-
 		return (
 			<Slider {...settings} className='my-12'>
-				{products.map((item, i) => (
-					<ProductCard
+				{testimonial.map((item, i) => (
+					<TestimoniCard
 						key={i}
+						iconQute={item.iconQute}
+						quote={item.quote}
 						img={item.img}
-						category={item.category}
 						name={item.name}
-						desc={item.desc}
-						price={item.price}
+						iconStar={item.iocnStar}
+						rate={item.rate}
 					/>
 				))}
 			</Slider>
