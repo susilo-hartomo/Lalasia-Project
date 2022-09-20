@@ -15,3 +15,7 @@
         line-height: 130%;
     }
 }
+
+.slick-prev:before, .slick-next:before {
+    content: none !important;
+}

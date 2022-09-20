@@ -10,6 +10,14 @@ import margaretTeam from './margaret_team.svg';
 import royTeam from './roy_team.svg';
 import joneTeam from './jone_team.png';
 import graceTeam from './grace_team.png';
+import videoThumbnail from './videoThumbnail.png';
+import benefit1 from './benefit1.svg';
+import benefit2 from './benefit2.svg';
+import benefit3 from './benefit3.svg';
+import bookshelf from './bookshelf.png';
+import aestetic from './aesteticChair.png';
+import lamp from './smartLamp.png';
+import sofa from './sofaEmpuk.png';
 
 export {
 	brandImg,
@@ -24,4 +32,12 @@ export {
 	margaretTeam,
 	joneTeam,
 	graceTeam,
+	videoThumbnail,
+	benefit1,
+	benefit2,
+	benefit3,
+	bookshelf,
+	aestetic,
+	lamp,
+	sofa
 };
