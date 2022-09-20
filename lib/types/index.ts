@@ -4,7 +4,7 @@ export interface ArticleTypes {
   avatar: string;
   category: string;
   thumbnail: string;
-  date: Date;
+  date: string;
   summary: string;
   content?: string;
 }

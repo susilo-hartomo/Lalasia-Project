@@ -1,10 +1,15 @@
 import React from "react";
-import { NextPage, GetStaticProps } from "next";
-
+import { NextPage, GetStaticProps, InferGetStaticPropsType } from "next";
+import { ArticleTypes } from "lib/types";
 import Layout from "@/components/Layout";
-import { getNews, getTwoLatestNews } from "lib/helper/article";
+import { getAllNews, getTwoLatestNews } from "lib/helper/fetchArticle";
 
-const index: NextPage = () => {
+const index: NextPage = ({
+  twolatestnews,
+  allnews,
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
+  // const twolatestnewss = JSON.parse(twolatestnews);
+
   return (
     <Layout title={"article"} content={"asdas"}>
       <h1>Article</h1>
@@ -14,18 +19,23 @@ const index: NextPage = () => {
       </h2>
 
       {/* <Carousel /> */}
-      {/* <DailyNews /> */}
       {/* <TrendingTopics */}
+
       {/* <NewsLetter /> */}
     </Layout>
   );
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const data = await getTwoLatestNews();
-  const data2 = await getNews();
+  const twolatestnews: ArticleTypes[] = await getTwoLatestNews();
+  const allnews: ArticleTypes[] = await getAllNews();
 
-  return { props: {} };
+  return {
+    props: {
+      twolatestnews,
+      allnews,
+    },
+  };
 };
 
 export default index;
