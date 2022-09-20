@@ -16,14 +16,6 @@
     }
 }
 
-progress::-moz-progress-bar {
-    background-color: white 0.8;
-}
-
-progress::-webkit-progress-value {
-    background-color: white 0.8;
-}
-
-progress {
-    background-color: white 0.8;
+.slick-prev:before, .slick-next:before {
+    content: none !important;
 }
