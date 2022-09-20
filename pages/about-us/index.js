@@ -9,6 +9,7 @@ import { callRecivedIc, messageIc, awardIc, arrowRightIc } from '../../assets/ic
 import { OurTeam } from '../../constants';
 import ProfileOurTeamCard from '@/components/card/ProfileOurTeamCard';
 import PrimaryButton from '@/components/button/PrimaryButton';
+import VideoPlayer from '@/components/items/VideoPlayer';
 
 function aboutUs() {
 	const renderBanner = () => {
@@ -19,6 +20,9 @@ function aboutUs() {
 					We display products based on the latest products we have, if you want to see our old products please
 					enter the name of the item
 				</p>
+				<div className='lg:my-20 mb-12 mt-8'>
+					<VideoPlayer urlVideo={'https://www.youtube.com/watch?v=1czjJGA5dHQ'} />
+				</div>
 			</div>
 		);
 	};
