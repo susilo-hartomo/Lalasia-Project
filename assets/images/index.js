@@ -18,7 +18,10 @@ import bookshelf from './bookshelf.png';
 import aestetic from './aesteticChair.png';
 import lamp from './smartLamp.png';
 import sofa from './sofaEmpuk.png';
-
+import ourProduct1 from './ourProduct1.png';
+import ourProduct2 from './ourProduct2.png';
+import jane from './jane.svg';
+import cobo from './cobo.svg';
 export {
 	brandImg,
 	brandText,
@@ -39,5 +42,9 @@ export {
 	bookshelf,
 	aestetic,
 	lamp,
-	sofa
+	sofa,
+	ourProduct1,
+	ourProduct2,
+	jane,
+	cobo
 };

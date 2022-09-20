@@ -8,9 +8,9 @@ function ProductCard({ img, category, name, desc, price }) {
                 <Image src={img} alt='product' layout='fill' />
             </div>
             <div className=''>
-                <h5 className='heading text-paragraph-1'>{category}</h5>
-                <h3 className='font-bold text-title-1'>{name}</h3>
-                <p className='text-paragraph-1'>{desc}</p>
+                <h5 className='heading text-paragraph-1 mb-3'>{category}</h5>
+                <h3 className='font-bold text-title-1 mb-1'>{name}</h3>
+                <p className='text-paragraph-1 mb-4'>{desc}</p>
                 <h3 className='heading text-title-1 mb-3'>{price}</h3>
             </div>
         </div>
