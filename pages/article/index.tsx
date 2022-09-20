@@ -4,10 +4,12 @@ import { ArticleTypes } from "lib/types";
 import Layout from "@/components/Layout";
 import { getAllNews, getTwoLatestNews } from "lib/helper/fetchArticle";
 
-const index: NextPage = ({
-  twolatestnews,
-  allnews,
-}: InferGetStaticPropsType<typeof getStaticProps>) => {
+interface props {
+  twolatestnews: ArticleTypes[];
+  allnews: ArticleTypes[];
+}
+
+const index: NextPage<props> = ({ twolatestnews, allnews }) => {
   // const twolatestnewss = JSON.parse(twolatestnews);
 
   return (
@@ -20,6 +22,25 @@ const index: NextPage = ({
 
       {/* <Carousel /> */}
       {/* <TrendingTopics */}
+      <h5 style={{ fontWeight: "bold" }}>Trending Topics Latest News</h5>
+      {twolatestnews.map((item, i) => {
+        return (
+          <div>
+            <div>{item.title}</div>
+            <div>{item.author}</div>
+          </div>
+        );
+      })}
+
+      <h5 style={{ fontWeight: "bold" }}>All News</h5>
+      {allnews.map((item, i) => {
+        return (
+          <div>
+            <div>{item.title}</div>
+            <div>{item.author}</div>
+          </div>
+        );
+      })}
 
       {/* <NewsLetter /> */}
     </Layout>

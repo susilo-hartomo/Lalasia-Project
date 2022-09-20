@@ -2,7 +2,8 @@ import { ArticleTypes } from "lib/types";
 
 export const BlogData: ArticleTypes[] = [
   {
-    title: "string",
+    title:
+      "Est amet dolore nisi ut esse adipisicing aute qui deserunt enim sint voluptate ullamco aliquip.",
     author: "Morgan Goldbreg",
     avatar: "/avatar_small.png",
     category: "Design Inspiration",
@@ -13,7 +14,8 @@ export const BlogData: ArticleTypes[] = [
     content: "",
   },
   {
-    title: "string",
+    title:
+      "Exercitation occaecat nulla do ipsum consectetur quis amet occaecat.",
     author: "Rizal Ahmad",
     avatar: "/avatar_small.png",
     category: "Color Guide",
@@ -23,7 +25,8 @@ export const BlogData: ArticleTypes[] = [
     content: "",
   },
   {
-    title: "string",
+    title:
+      "Aliquip anim dolor eiusmod nulla incididunt dolor dolore cillum reprehenderit culpa id.",
     author: "Filipus Fendi",
     avatar: "/avatar_small.png",
     category: "Tips and Trick",
@@ -33,7 +36,8 @@ export const BlogData: ArticleTypes[] = [
     content: "",
   },
   {
-    title: "string",
+    title:
+      "Cupidatat aliquip eiusmod laboris nulla sint ullamco in ea culpa officia dolor reprehenderit.",
     author: "Jane Doe",
     avatar: "/avatar_small.png",
     category: "Color Guide",
@@ -43,7 +47,8 @@ export const BlogData: ArticleTypes[] = [
     content: "",
   },
   {
-    title: "string",
+    title:
+      "Mollit mollit sint adipisicing magna reprehenderit culpa proident anim.",
     author: "John Doe",
     avatar: "/avatar_small.png",
     category: "Tips and Trick",
