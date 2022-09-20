@@ -13,12 +13,8 @@ const ListFeature = ({ title, listOfFeatures }) => {
 
 			{listOfFeatures.map((item, index) => (
 				<Link key={index} href={item.route}>
-					<a
-						data-aos-delay={`${index * 20 + 140}`}
-						data-aos-duration='500'
-						data-aos-easing='ease-in-out'
-						data-aos-offset='0'>
-						<p className='paragraph mb-3 text-paragraph-1' data-aos='fade-left'>
+					<a data-aos-delay={`${index * 40 + 140}`} data-aos-duration='500' data-aos-easing='ease-in-out'>
+						<p className='paragraph mb-3 text-paragraph-1' data-aos='fade-left' data-aos-offset='10'>
 							{item.path}
 						</p>
 					</a>
@@ -50,7 +46,6 @@ export default function Footer() {
 					data-aos='fade-up'
 					data-aos-delay='20'
 					data-aos-duration='500'
-					data-aos-offset='0'
 					data-aos-easing='ease-in-out'>
 					{renderBrand()}
 					<p
@@ -69,23 +64,23 @@ export default function Footer() {
 						data-aos-delay='60'
 						data-aos-duration='500'
 						data-aos-easing='ease-in-out'
-						data-aos-offset='0'>
+						data-aos-offset='20'>
 						<ListFeature title='Product' listOfFeatures={productLinkList} />
 					</div>
 					<div
 						data-aos='fade-up'
-						data-aos-delay='60'
+						data-aos-delay='80'
 						data-aos-duration='500'
 						data-aos-easing='ease-in-out'
-						data-aos-offset='0'>
+						data-aos-offset='20'>
 						<ListFeature title='Services' listOfFeatures={servicesLinkList} />
 					</div>
 					<div
 						data-aos='fade-up'
-						data-aos-delay='60'
+						data-aos-delay='100'
 						data-aos-duration='500'
 						data-aos-easing='ease-in-out'
-						data-aos-offset='0'>
+						data-aos-offset='20'>
 						<ListFeature title='Follow Us' listOfFeatures={followUsLinkList} />
 					</div>
 				</div>
