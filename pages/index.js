@@ -8,6 +8,8 @@ import { abstractStars, spiral, searchNormal, banner, ourProduct1, ourProduct2 }
 import { Benefits } from '../constants';
 import CountingDesc from '@/components/items/CountingDesc';
 import TestimoniSlick from '@/components/slick/TestimoniSlick';
+import { articles } from 'constants/articles';
+import ArticleCard from '@/components/card/ArticleCard';
 
 export default function Home() {
 	const renderBanner = () => {
@@ -132,18 +134,52 @@ export default function Home() {
 	const renderTestimonial = () => {
 		return (
 			<div className='container mt-44'>
-				<div className='mx-auto w-[489px] h-[94px] mb-7 text-center'>
+				<div className='mb-7 text-center'>
 					<h5 className='text-secondary-1'>Testimonials</h5>
 					<h2 className='heading font-bold'>What our customer say</h2>
 				</div>
-				<div className='w-[656px] h-[54px] mx-auto '>
+				<div className='w-[656px] h-[54px] mx-auto'>
 					<p className='text-center text-paragraph-1'>
 						Pellentesque etiam blandit in tincidunt at donec. Eget ipsum dignissim placerat nisi, adipiscing
 						mauris non purus parturient.
 					</p>
 				</div>
-
 				<TestimoniSlick />
+			</div>
+		);
+	};
+
+	const renderArticles = () => {
+		return (
+			<div className='container mx-auto'>
+				<p className='text-secondary-1'>Articles</p>
+				<div className='flex flex-row justify-between'>
+					<div className='w-1/2'>
+						<div className='w-[544px] h-[151px]'>
+							<h2 className='heading font-bold'>The best furniture comes from Lalasia</h2>
+							<p className='mt-7 mb-12 text-paragraph-1'>
+								Pellentesque etiam blandit in tincidunt at donec.
+							</p>
+						</div>
+					</div>
+
+					<div className='w-1/2'>
+						<div>
+							{articles.map((item, i) => (
+								<ArticleCard
+									key={i}
+									img={item.img}
+									category={item.category}
+									title={item.title}
+									prefix={item.prefix}
+									iconProfil={item.iconProfil}
+									name={item.name}
+									date={item.date}
+								/>
+							))}
+						</div>
+					</div>
+				</div>
 			</div>
 		);
 	};
@@ -155,6 +191,7 @@ export default function Home() {
 			{renderProduct()}
 			{renderOurProduct()}
 			{renderTestimonial()}
+			{renderArticles()}
 		</Layout>
 	);
 }

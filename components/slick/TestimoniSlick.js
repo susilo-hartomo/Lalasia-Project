@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import ProductCard from '../card/ProductCard';
-import { products } from '../../constants/products';
 import Image from 'next/image';
 import { leftSlide, rightSlide } from '../../assets/icons';
 import { testimonial } from 'constants/testimonial';
@@ -39,7 +37,7 @@ export default class TestimoniSlick extends Component {
 		const settings = {
 			className: 'center variable-width slider overflow-hidden',
 			centerMode: true,
-			centerPadding: '265px',
+			centerPadding: '300px',
 			infinite: true,
 			speed: 500,
 			slidesToShow: 1,
