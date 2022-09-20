@@ -13,11 +13,11 @@ const index: NextPage<props> = ({ twolatestnews, allnews }) => {
     const RenderHeadArticle = () => {
         return (
             <>
-                <h1>Article</h1>
-                <h2>
+                <h1 className="text-title-1 text-center ">Article</h1>
+                <p className="text-center  mx-auto px-4 text-paragraph-1">
                     We display product based on latest products we have, if you
                     want to see old products please enter the name of the item
-                </h2>
+                </p>
             </>
         )
     }
