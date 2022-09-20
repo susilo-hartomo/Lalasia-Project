@@ -9,5 +9,7 @@ import arrowRightIc from './right_arrow_ic.svg';
 import playButtonIc from './play-button.svg';
 import leftSlide from './leftSlide.svg';
 import rightSlide from './rightSlide.svg';
+import star from './star.svg';
+import quote from './quote-up.svg';
 
-export { humbergerIcn, cartIcn, userIcn, closeIcn, callRecivedIc, messageIc, awardIc, arrowRightIc, playButtonIc, leftSlide, rightSlide };
+export { humbergerIcn, cartIcn, userIcn, closeIcn, callRecivedIc, messageIc, awardIc, arrowRightIc, playButtonIc, leftSlide, rightSlide, star, quote };

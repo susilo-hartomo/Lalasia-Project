@@ -4,8 +4,9 @@ import Layout from '@/components/Layout/index';
 import ProductSlick from '@/components/slick/ProductSlick';
 import Image from 'next/image';
 import { isTemplateSpan } from 'typescript';
-import { abstractStars, spiral, searchNormal, banner } from '../assets/images';
+import { abstractStars, spiral, searchNormal, banner, ourProduct1, ourProduct2 } from '../assets/images';
 import { Benefits } from '../constants';
+import CountingDesc from '@/components/items/CountingDesc';
 
 export default function Home() {
 	const renderSection1 = () => {
@@ -73,11 +74,58 @@ export default function Home() {
 		);
 	};
 
+
+	const renderOurProduct = () => {
+		return (
+			<div className='container mx-auto mt-[180px]'>
+				<div className='flex flex-row justify-between'>
+					<div>
+						<div className='w-[511px] h-[151px] '>
+							<h5 className='text-secondary-1 mb-3'>Our Products</h5>
+							<h2 className='heading font-bold'>Crafted by talented and high quality material</h2>
+						</div>
+						<div className='w-[580px] h-[96px] my-12'>
+							<p className='text-paragraph-1'>Pellentesque etiam blandit in tincidunt at donec. Eget ipsum dignissim placerat nisi, adipiscing mauris non purus parturient. morbi fermentum, vivamus et accumsan dui tincidunt pulvinar</p>
+						</div>
+						<PrimaryButton text='Learn More' />
+						<div className='mt-12'>
+							<Image src={ourProduct1} alt={'product1'} />
+						</div>
+					</div>
+					<div>
+						<div className='flex gap-12 lg:mt-12 mt-8 justify-end'>
+							<CountingDesc total={20} prefix='+' desc='Years Experience' />
+							<CountingDesc total={483} desc='Happy Client' />
+							<CountingDesc total={150} prefix='+' desc='Project Finished' />
+						</div>
+						<div className='mt-[58px]'>
+							<Image src={ourProduct2} alt={'product2'} />
+						</div>
+					</div>
+				</div>
+			</div>
+		);
+	};
+
+	const renderTestimonial = () => {
+		return (
+			<div className='container mt-44'>
+				<div className='mx-auto w-[489px] h-[94px] mb-7 text-center'>
+					<h5 className='text-secondary-1'>Testimonials</h5>
+					<h1 className='heading font-bold'>What our customer say</h1>
+				</div>
+				<p className='w-[656px] h-[54px] mx-auto text-center text-paragraph-1'>Pellentesque etiam blandit in tincidunt at donec. Eget ipsum dignissim placerat nisi, adipiscing mauris non purus parturient.</p>
+			</div>
+		);
+	};
+
 	return (
 		<Layout>
 			{renderSection1()}
 			{renderBenefit()}
 			{renderProduct()}
+			{renderOurProduct()}
+			{renderTestimonial()}
 		</Layout>
 	);
 }
