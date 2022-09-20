@@ -49,9 +49,9 @@ export {
   lamp,
   sofa,
   ourProduct1,
-	ourProduct2,
-	jane,
-	cobo
+  ourProduct2,
+  jane,
+  cobo,
   serviceBrandImg,
   servicePortofolioImg1,
   servicePortofolioImg2,
