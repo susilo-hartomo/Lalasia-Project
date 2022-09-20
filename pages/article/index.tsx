@@ -25,7 +25,7 @@ const index: NextPage<props> = ({ twolatestnews, allnews }) => {
       <h5 style={{ fontWeight: "bold" }}>Trending Topics Latest News</h5>
       {twolatestnews.map((item, i) => {
         return (
-          <div>
+          <div key={i}>
             <div>{item.title}</div>
             <div>{item.author}</div>
           </div>
@@ -35,7 +35,7 @@ const index: NextPage<props> = ({ twolatestnews, allnews }) => {
       <h5 style={{ fontWeight: "bold" }}>All News</h5>
       {allnews.map((item, i) => {
         return (
-          <div>
+          <div key={i}>
             <div>{item.title}</div>
             <div>{item.author}</div>
           </div>
