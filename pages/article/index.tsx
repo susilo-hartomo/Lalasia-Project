@@ -1,62 +1,90 @@
-import React from "react";
-import { NextPage, GetStaticProps, InferGetStaticPropsType } from "next";
-import { ArticleTypes } from "lib/types";
-import Layout from "@/components/Layout";
-import { getAllNews, getTwoLatestNews } from "lib/helper/fetchArticle";
+import React from 'react'
+import { NextPage, GetStaticProps, InferGetStaticPropsType } from 'next'
+import { ArticleTypes } from 'lib/types'
+import Layout from '@/components/Layout'
+import { getAllNews, getTwoLatestNews } from 'lib/helper/fetchArticle'
 
 interface props {
-  twolatestnews: ArticleTypes[];
-  allnews: ArticleTypes[];
+    twolatestnews: ArticleTypes[]
+    allnews: ArticleTypes[]
 }
 
 const index: NextPage<props> = ({ twolatestnews, allnews }) => {
-  // const twolatestnewss = JSON.parse(twolatestnews);
-
-  return (
-    <Layout title={"article"} content={"asdas"}>
-      <h1>Article</h1>
-      <h2>
-        We display product based on latest products we have, if you want to see
-        old products please enter the name of the item
-      </h2>
-
-      {/* <Carousel /> */}
-      {/* <TrendingTopics */}
-      <h5 style={{ fontWeight: "bold" }}>Trending Topics Latest News</h5>
-      {twolatestnews.map((item, i) => {
+    const RenderHeadArticle = () => {
         return (
-          <div key={i}>
-            <div>{item.title}</div>
-            <div>{item.author}</div>
-          </div>
-        );
-      })}
+            <>
+                <h1>Article</h1>
+                <h2>
+                    We display product based on latest products we have, if you
+                    want to see old products please enter the name of the item
+                </h2>
+            </>
+        )
+    }
 
-      <h5 style={{ fontWeight: "bold" }}>All News</h5>
-      {allnews.map((item, i) => {
+    const RenderCarousel = () => {
+        return <>This is carousel</>
+    }
+
+    const RenderTrendingTopics = () => {
         return (
-          <div key={i}>
-            <div>{item.title}</div>
-            <div>{item.author}</div>
-          </div>
-        );
-      })}
+            <>
+                <h5 style={{ fontWeight: 'bold' }}>
+                    Trending Topics Latest News
+                </h5>
+                {twolatestnews.map((item, i) => {
+                    return (
+                        <div key={i}>
+                            <div>{item.title}</div>
+                            <div>{item.author}</div>
+                        </div>
+                    )
+                })}
+            </>
+        )
+    }
 
-      {/* <NewsLetter /> */}
-    </Layout>
-  );
-};
+    const RenderAllNews = () => {
+        return (
+            <>
+                <h5 style={{ fontWeight: 'bold' }}>All News</h5>
+                {allnews.map((item, i) => {
+                    return (
+                        <div key={i}>
+                            <div>{item.title}</div>
+                            <div>{item.author}</div>
+                        </div>
+                    )
+                })}
+            </>
+        )
+    }
+    const RenderNewsLetter = () => {
+        return <>This is newsletter</>
+    }
+
+    return (
+        <Layout title={'article'} content={'asdas'}>
+            <RenderHeadArticle />
+            <RenderCarousel />
+            <RenderTrendingTopics />
+            <RenderAllNews />
+            <RenderNewsLetter />
+        </Layout>
+    )
+}
 
 export const getStaticProps: GetStaticProps = async () => {
-  const twolatestnews: ArticleTypes[] = await getTwoLatestNews();
-  const allnews: ArticleTypes[] = await getAllNews();
+    const twolatestnews: ArticleTypes[] = await getTwoLatestNews()
+    const allnews: ArticleTypes[] = await getAllNews()
 
-  return {
-    props: {
-      twolatestnews,
-      allnews,
-    },
-  };
-};
+    return {
+        props: {
+            twolatestnews,
+            allnews,
+        },
+        revalidate: 180,
+    }
+}
 
-export default index;
+export default index
