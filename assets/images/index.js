@@ -22,6 +22,12 @@ import ourProduct1 from './ourProduct1.png';
 import ourProduct2 from './ourProduct2.png';
 import jane from './jane.svg';
 import cobo from './cobo.svg';
+import jeremy from './Jerremy.svg';
+import micahela from './Michaela.svg';
+import kim from './Kim.svg';
+import article1 from './imgArticle1.png';
+import article2 from './imgArticle2.png';
+import article3 from './imgArticle3.png';
 export {
 	brandImg,
 	brandText,
@@ -46,5 +52,11 @@ export {
 	ourProduct1,
 	ourProduct2,
 	jane,
-	cobo
+	cobo,
+	jeremy,
+	micahela,
+	kim,
+	article1,
+	article2,
+	article3,
 };
