@@ -39,7 +39,7 @@ export default function Footer() {
 	);
 
 	return (
-		<footer className='my-24 px-8 lg:px-0'>
+		<footer className='lg:my-24 my-16 px-8 lg:px-0'>
 			<div className='container lg:flex mx-auto lg:pt-24 pt-5 border-t-2 border-ligh-white'>
 				<div
 					className='w-3/4'
