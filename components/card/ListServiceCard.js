@@ -5,7 +5,7 @@ const ListServiceCard = ({ number, title, desc, idx }) => {
     <div
       className="text-left lg:w-[32%]"
       data-aos="fade-up"
-      data-aos-delay={`${idx * 20 + 140}`}
+      data-aos-delay={`${idx * 80 + 140}`}
       data-aos-duration="500"
       data-aos-easing="ease-in-out"
     >
