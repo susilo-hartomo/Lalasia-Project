@@ -161,6 +161,7 @@ export default function Home() {
 								Pellentesque etiam blandit in tincidunt at donec.
 							</p>
 						</div>
+
 					</div>
 
 					<div className='w-1/2'>

@@ -2,35 +2,8 @@ import React, { Component } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import Image from 'next/image';
-import { leftSlide, rightSlide } from '../../assets/icons';
 import { testimonial } from 'constants/testimonial';
 import TestimoniCard from '../card/TestimoniCard';
-
-function SampleNextArrow(props) {
-	const { className, style, onClick } = props;
-	return (
-		<div
-			className={`${className} z-20`}
-			style={{ ...style, display: 'block', right: 25, width: 52, height: 52, top: 180 }}
-			onClick={onClick}>
-			<Image src={rightSlide} width={52} height={52} />
-		</div>
-	);
-}
-
-function SamplePrevArrow(props) {
-	const { className, style, onClick } = props;
-
-	return (
-		<div
-			className={`${className} z-30`}
-			style={{ ...style, display: 'block', left: 25, width: 52, height: 52, top: 180 }}
-			onClick={onClick}>
-			<Image src={leftSlide} width={52} height={52} />
-		</div>
-	);
-}
 
 export default class TestimoniSlick extends Component {
 	render() {
@@ -45,9 +18,6 @@ export default class TestimoniSlick extends Component {
 			autoplay: true,
 			autoplaySpeed: 5000,
 			cssEase: "linear"
-
-			// nextArrow: <SampleNextArrow />,
-			// prevArrow: <SamplePrevArrow />,
 		};
 		return (
 			<Slider {...settings} className='my-12'>
