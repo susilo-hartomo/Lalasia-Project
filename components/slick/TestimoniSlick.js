@@ -24,7 +24,7 @@ function SamplePrevArrow(props) {
 
 	return (
 		<div
-			className={`${className} z-20`}
+			className={`${className} z-30`}
 			style={{ ...style, display: 'block', left: 25, width: 52, height: 52, top: 180 }}
 			onClick={onClick}>
 			<Image src={leftSlide} width={52} height={52} />
@@ -39,11 +39,15 @@ export default class TestimoniSlick extends Component {
 			centerMode: true,
 			centerPadding: '300px',
 			infinite: true,
-			speed: 500,
+			speed: 5000,
 			slidesToShow: 1,
 			slidesToScroll: 1,
-			nextArrow: <SampleNextArrow />,
-			prevArrow: <SamplePrevArrow />,
+			autoplay: true,
+			autoplaySpeed: 5000,
+			cssEase: "linear"
+
+			// nextArrow: <SampleNextArrow />,
+			// prevArrow: <SamplePrevArrow />,
 		};
 		return (
 			<Slider {...settings} className='my-12'>
