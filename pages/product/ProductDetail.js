@@ -26,7 +26,7 @@ const ProductDetail = () => {
           <div className="mt-7 lg:w-[45%]">
             <h2 className="heading text-title-1">{colorProductDetail.name}</h2>
             <p className="mt-2 text-paragraph-1 paragraph">
-              {colorProductDetail.title}
+              {colorProductDetail.category}
             </p>
 
             <h6 className="heading mt-5 text-title-1">Color</h6>
@@ -91,8 +91,7 @@ const ProductDetail = () => {
               desc={item.desc}
               price={item.price}
               idx={index}
-              responsiveParent="w-full h-[280px] lg:h-[535px]"
-              responsiveImg="w-full h-[130px] lg:h-[360px]"
+              responsiveParent="w-full h-[280px] lg:h-[535px], w-full h-[130px] lg:h-[360px]"
             />
           ))}
         </div>

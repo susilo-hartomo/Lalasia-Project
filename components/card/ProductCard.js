@@ -8,7 +8,6 @@ function ProductCard({
   desc,
   price,
   responsiveParent,
-  responsiveImg,
   idx,
 }) {
   const [responsiveStyle, setResponsiveStyle] = useState({
@@ -18,34 +17,40 @@ function ProductCard({
     nameStyle: "mb-1",
     descStyle: "mb-4",
     priceStyle: "mb-3",
-    aosStyle: {},
   });
+
+  const [parentDiv, parentImg] = responsiveParent.split(",");
 
   useEffect(() => {
     responsiveParent &&
       setResponsiveStyle({
-        parentStyle: responsiveParent,
-        parentImgStyle: responsiveImg,
+        parentStyle: parentDiv,
+        parentImgStyle: parentImg,
         categoryStyle: "my-3",
         nameStyle: "whitespace-nowrap truncate text-base my-3 lg:text-2xl",
         descStyle: "whitespace-nowrap truncate my-3",
         priceStyle: "text-sm lg:text-xl",
-        aosStyle: {
-          "data-aos": "fade-up",
-          "data-aos-delay": idx * 20 + 120,
-          "data-aos-duration": "500",
-          "data-aos-easing": "ease-in-out",
-        },
       });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [responsiveParent]);
 
-  // console.log(responsiveStyle);
+  let aos = {};
+  if (typeof responsiveParent !== "undefined") {
+    aos = {
+      "data-aos": "fade-up",
+      "data-aos-delay": idx * 20 + 120,
+      "data-aos-duration": "500",
+      "data-aos-easing": "ease-in-out",
+    };
+  } else {
+    aos = {};
+  }
 
   return (
     <div
       className={`${responsiveStyle.parentStyle}`}
       style={{ boxShadow: "0px 4px 100px rgba(175, 173, 181, 0.1)" }}
+      {...aos}
     >
       <div className={`${responsiveStyle.parentImgStyle}  relative`}>
         <Image src={img} alt="product" layout="fill" />
