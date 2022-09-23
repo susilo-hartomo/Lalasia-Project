@@ -1,31 +1,26 @@
 import React from 'react'
 import { ArticleTypes } from 'lib/types'
 import Image from 'next/image'
+import { Box, Stack } from '@mui/system'
 
 export default function ArticleCard(article: ArticleTypes) {
     return (
-        <div className="block">
-            <div
-                style={{
-                    position: 'relative',
-                    width: '100%',
-                    maxHeight: '340px',
-                }}
-            >
+        <div>
+            <Box sx={{ position: 'relative', width: '100%', height: '340px' }}>
                 <Image
                     layout="fill"
                     src={article.thumbnail}
                     objectFit="cover"
                 />
-            </div>
-
-            <div>{article.title}</div>
-            <div>{article.author}</div>
-            <div>{article.avatar}</div>
-            <div>{article.category}</div>
-            <div>{article.date}</div>
-            <div>{article.summary}</div>
-            <div>{article.thumbnail}</div>
+            </Box>
+            <p>{article.category}</p>
+            <h3>{article.title}</h3>
+            <p>{article.summary}</p>
+            <Stack direction={'row'}>
+                <div>{article.author}</div>
+                <Image width={28} height={28} src={article.avatar} />
+                <div>{article.date}</div>
+            </Stack>
         </div>
     )
 }
