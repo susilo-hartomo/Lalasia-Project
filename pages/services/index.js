@@ -1,13 +1,11 @@
 import Layout from "@/components/Layout";
-import Image from "next/image";
-import { serviceBrandImg } from "../../assets/images";
 import { arrowRightIc } from "../../assets/icons";
 import { datasListService, dataListPortofolio } from "../../constants/Services";
 
 import PortofolioServiceImg from "@/components/card/PortofolioServiceCard";
 import ListServiceCard from "@/components/card/ListServiceCard";
 import PrimaryButton from "@/components/button/PrimaryButton";
-
+import BannerServiceSlick from "@/components/slick/BannerServiceSlick";
 const Service = () => {
   const renderBanner = () => {
     return (
@@ -30,28 +28,9 @@ const Service = () => {
   const renderBannerImage = () => {
     return (
       <div className="mt-14 mx-auto">
-        <div
-          className="w-full h-[200px] lg:h-[550px] relative"
-          data-aos="fade-up"
-          data-aos-delay="20"
-          data-aos-duration="5100"
-          data-aos-easing="ease-in-out"
-        >
-          <Image
-            src={serviceBrandImg}
-            alt="Services image brand"
-            layout="fill"
-            objectFit="cover"
-          />
-          <div className="w-full flex flex-nowrap lg:hidden">
-            <div className="absolute left-1/2 -translate-x-1/2 top-2/3">
-              <div className="w-[10px] h-[10px] rounded-full bg-paragraph-3 mr-2 inline-block"></div>
-              <div className="w-[10px] h-[10px] rounded-full bg-paragraph-6 mr-2 inline-block"></div>
-              <div className="w-[10px] h-[10px] rounded-full bg-paragraph-3 mr-2 inline-block"></div>
-              <div className="w-[10px] h-[10px] rounded-full bg-paragraph-3 mr-2 inline-block"></div>
-            </div>
-          </div>
-        </div>
+        <BannerServiceSlick />
+        {/* <div className="w-full h-[200px] lg:h-[550px]">
+        </div> */}
       </div>
     );
   };
@@ -83,7 +62,7 @@ const Service = () => {
             data-aos-duration="500"
             data-aos-easing="ease-in-out"
           >
-            <h5 className="font-bold text-lg text-secondary-2">Portofolio</h5>
+            <h6 className="font-bold text-lg text-secondary-2">Portofolio</h6>
             <h2 className="heading">Amazing project We&apos;ve done before</h2>
           </div>
           <div
@@ -122,30 +101,22 @@ const Service = () => {
   const renderInteredted = () => {
     return (
       <div className="lg:my-[90px] my-8 px-4 lg:px-8 xl:px-0">
-        <div className="lg:flex  lg:gap-20 xl:gap-24 justify-between items-center">
+        <div className="lg:flex lg:gap-20 xl:gap-24 justify-between items-center">
           <div
+            className="lg:w-1/2 mb-4 lg:mb-0"
             data-aos="fade-up"
             data-aos-delay="20"
             data-aos-duration="500"
             data-aos-easing="ease-in-out"
           >
-            <h2 className="heading lg:w-1/3 w-4/5 mb-4 lg:mb-0">
-              Are you interested work with us?
-            </h2>
+            <h2 className="heading w-4/5">Are you interested work with us?</h2>
           </div>
 
-          <div
-            data-aos="fade-up"
-            data-aos-delay="20"
-            data-aos-duration="600"
-            data-aos-easing="ease-in-out"
-          >
-            <PrimaryButton
-              text="Let's Talk"
-              onClick={() => alert("press button")}
-              icon={arrowRightIc}
-            />
-          </div>
+          <PrimaryButton
+            text="Let's Talk"
+            onClick={() => alert("press button")}
+            icon={arrowRightIc}
+          />
         </div>
       </div>
     );
