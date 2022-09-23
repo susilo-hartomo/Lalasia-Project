@@ -18,7 +18,20 @@ import bookshelf from './bookshelf.png';
 import aestetic from './aesteticChair.png';
 import lamp from './smartLamp.png';
 import sofa from './sofaEmpuk.png';
-
+import ourProduct1 from './ourProduct1.png';
+import ourProduct2 from './ourProduct2.png';
+import jane from './jane.svg';
+import cobo from './cobo.svg';
+import serviceBrandImg from './services_brand_img.svg';
+import servicePortofolioImg1 from './services_portofolio_img1.svg';
+import servicePortofolioImg2 from './services_portofolio_img2.svg';
+import servicePortofolioImg3 from './services_portofolio_img3.svg';
+import jeremy from './Jerremy.svg';
+import micahela from './Michaela.svg';
+import kim from './Kim.svg';
+import article1 from './imgArticle1.png';
+import article2 from './imgArticle2.png';
+import article3 from './imgArticle3.png';
 export {
 	brandImg,
 	brandText,
@@ -39,5 +52,19 @@ export {
 	bookshelf,
 	aestetic,
 	lamp,
-	sofa
+	sofa,
+	ourProduct1,
+	ourProduct2,
+	jane,
+	cobo,
+	serviceBrandImg,
+	servicePortofolioImg1,
+	servicePortofolioImg2,
+	servicePortofolioImg3,
+	jeremy,
+	micahela,
+	kim,
+	article1,
+	article2,
+	article3,
 };
