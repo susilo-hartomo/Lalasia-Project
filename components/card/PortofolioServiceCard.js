@@ -26,7 +26,7 @@ const PortofolioServiceImg = ({ img, title, desc, idx }) => {
         objectFit="cover"
       />
       <div className="w-full absolute bottom-0 px-7 mb-6 lg:mb-8">
-        <div className="w-full">
+        <div className={`w-full lg:pr-4 ${idx !== 0 && "lg:w-2/3"}`}>
           <h3 className="text-light-white heading">{title}</h3>
           <p className="py-2 text-light-white paragraph tracking-wider truncate whitespace-nowrap">
             {desc}

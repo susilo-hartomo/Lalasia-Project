@@ -1,5 +1,6 @@
 import Layout from "@/components/Layout";
 import Image from "next/image";
+import PrimaryButton from "@/components/button/PrimaryButton";
 import SecondaryButton from "@/components/button/SecondaryButton";
 import { products, colorProductDetail } from "../../constants/products";
 import ProductCard from "@/components/card/ProductCard";
@@ -35,8 +36,7 @@ const ProductDetail = () => {
                 return (
                   <div
                     key={index}
-                    className={`h-8 w-8 lg:h-12 lg:w-12 bg-${index === 0 ? "title-1" : `[${data.hexColor}]`
-                      } border-0`}
+                    className={`h-8 w-8 lg:h-12 lg:w-12 ${data.hexColor} border-0`}
                   ></div>
                 );
               })}
@@ -59,15 +59,13 @@ const ProductDetail = () => {
             </h3>
 
             <div className="mt-12 grid gap-5 grid-cols-1 grid-rows-1 lg:grid-cols-2 lg:grid-rows-2">
-              <SecondaryButton
+              <PrimaryButton
                 text="Buy Now"
                 onClick={() => alert("press button")}
-                bg="bg-primary-1"
               />
               <SecondaryButton
                 text="Add to Cart"
                 onClick={() => alert("press button")}
-                bg="bg-transparent"
               />
             </div>
           </div>
@@ -84,10 +82,11 @@ const ProductDetail = () => {
           {products.map((item, index) => (
             <div
               key={index}
-              data-aos='fade-up'
+              data-aos="fade-up"
               data-aos-delay={`${index * 100 + 150}`}
-              data-aos-duration='500'
-              data-aos-easing='ease-in-out'>
+              data-aos-duration="500"
+              data-aos-easing="ease-in-out"
+            >
               <ProductCard
                 img={item.img}
                 category={item.category}
