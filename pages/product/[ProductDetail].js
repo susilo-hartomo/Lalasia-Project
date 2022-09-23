@@ -35,9 +35,8 @@ const ProductDetail = () => {
                 return (
                   <div
                     key={index}
-                    className={`h-8 w-8 lg:h-12 lg:w-12 bg-${
-                      index === 0 ? "title-1" : `[${data.hexColor}]`
-                    } border-0`}
+                    className={`h-8 w-8 lg:h-12 lg:w-12 bg-${index === 0 ? "title-1" : `[${data.hexColor}]`
+                      } border-0`}
                   ></div>
                 );
               })}
@@ -83,16 +82,22 @@ const ProductDetail = () => {
         <h2 className="heading text-title-1">Related Items</h2>
         <div className="mt-6 grid gap-4 grid-cols-2 grid-rows-2 lg:grid-cols-3 lg:grid-rows-3">
           {products.map((item, index) => (
-            <ProductCard
+            <div
               key={index}
-              img={item.img}
-              category={item.category}
-              name={item.name}
-              desc={item.desc}
-              price={item.price}
-              idx={index}
-              responsiveParent="w-full h-[280px] lg:h-[535px], w-full h-[130px] lg:h-[360px]"
-            />
+              data-aos='fade-up'
+              data-aos-delay={`${index * 100 + 150}`}
+              data-aos-duration='500'
+              data-aos-easing='ease-in-out'>
+              <ProductCard
+                img={item.img}
+                category={item.category}
+                name={item.name}
+                desc={item.desc}
+                price={item.price}
+                responsiveParent="w-full h-[280px] lg:h-[535px]"
+                responsiveImgParent="w-full h-[130px] lg:h-[360px]"
+              />
+            </div>
           ))}
         </div>
       </div>

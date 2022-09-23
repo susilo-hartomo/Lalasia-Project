@@ -36,13 +36,13 @@ const Service = () => {
 			<div className='mt-28 px-2 flex flex-wrap lg:justify-between gap-5 lg:gap-6'>
 				{datasListService.map((data, index) => (
 					<div
+						key={index}
 						className='lg:w-[32%]'
 						data-aos='fade-left'
 						data-aos-delay={`${index * 100 + 150}`}
 						data-aos-duration='500'
 						data-aos-easing='ease-in-out'>
 						<ListServiceCard
-							key={index}
 							number={data.number}
 							title={data.title}
 							desc={data.description}
