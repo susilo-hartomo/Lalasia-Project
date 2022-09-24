@@ -1,0 +1,112 @@
+import Layout from "@/components/Layout";
+import Image from "next/image";
+import SecondaryButton from "@/components/button/SecondaryButton";
+import { products, colorProductDetail } from "../../constants/products";
+import ProductCard from "@/components/card/ProductCard";
+import { useState } from "react";
+
+const ProductDetail = () => {
+  const [isReadMore, setIsReadMore] = useState(true);
+  const toggleReadMore = () => {
+    setIsReadMore(!isReadMore);
+  };
+
+  const renderProductDetail = () => {
+    return (
+      <div className="mt-14 px-2">
+        <div className="lg:flex lg:flex-wrap lg:gap-10">
+          <div className="w-full h-[327px] relative lg:w-1/2 lg:h-[600px]">
+            <Image
+              src={colorProductDetail.img}
+              alt="Services image brand"
+              layout="fill"
+              objectFit="cover"
+            />
+          </div>
+          <div className="mt-7 lg:w-[45%]">
+            <h2 className="heading text-title-1">{colorProductDetail.name}</h2>
+            <p className="mt-2 text-paragraph-1 paragraph">
+              {colorProductDetail.category}
+            </p>
+
+            <h6 className="heading mt-5 text-title-1">Color</h6>
+            <div className="mt-2 flex flex-wrap">
+              {colorProductDetail.color.map((data, index) => {
+                return (
+                  <div
+                    key={index}
+                    className={`h-8 w-8 lg:h-12 lg:w-12 bg-${
+                      index === 0 ? "title-1" : `[${data.hexColor}]`
+                    } border-0`}
+                  ></div>
+                );
+              })}
+            </div>
+
+            <p className="mt-4 text-paragraph-1 paragraph">
+              {isReadMore
+                ? colorProductDetail.desc.slice(0, 150)
+                : colorProductDetail.desc}
+              <span
+                onClick={toggleReadMore}
+                className="inline-block text-primary-1 cursor-pointer"
+              >
+                {isReadMore ? "... Read More" : " Show Less"}
+              </span>
+            </p>
+
+            <h3 className="mt-5 heading text-title-1 lg:text-4xl">
+              {colorProductDetail.price}
+            </h3>
+
+            <div className="mt-12 grid gap-5 grid-cols-1 grid-rows-1 lg:grid-cols-2 lg:grid-rows-2">
+              <SecondaryButton
+                text="Buy Now"
+                onClick={() => alert("press button")}
+                bg="bg-primary-1"
+              />
+              <SecondaryButton
+                text="Add to Cart"
+                onClick={() => alert("press button")}
+                bg="bg-transparent"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  const renderProductRelated = () => {
+    return (
+      <div className="mt-28 px-2">
+        <h2 className="heading text-title-1">Related Items</h2>
+        <div className="mt-6 grid gap-4 grid-cols-2 grid-rows-2 lg:grid-cols-3 lg:grid-rows-3">
+          {products.map((item, index) => (
+            <ProductCard
+              key={index}
+              img={item.img}
+              category={item.category}
+              name={item.name}
+              desc={item.desc}
+              price={item.price}
+              idx={index}
+              responsiveParent="w-full h-[280px] lg:h-[535px], w-full h-[130px] lg:h-[360px]"
+            />
+          ))}
+        </div>
+      </div>
+    );
+  };
+
+  return (
+    <Layout title="Product Details" content="We are the one">
+      <div className="container mx-auto px-2 lg:px-0">
+        {renderProductDetail()}
+        {renderProductRelated()}
+      </div>
+    </Layout>
+  );
+};
+
+export default ProductDetail;

@@ -1,4 +1,5 @@
 import {
+  serviceBrandImg,
   servicePortofolioImg1,
   servicePortofolioImg2,
   servicePortofolioImg3,
@@ -64,4 +65,23 @@ const dataListPortofolio = [
   },
 ];
 
-export { datasListService, dataListPortofolio };
+const dataBanner = [
+  {
+    img: serviceBrandImg,
+    title: "banner 1",
+  },
+  {
+    img: servicePortofolioImg1,
+    title: "banner 2",
+  },
+  {
+    img: servicePortofolioImg2,
+    title: "banner 3",
+  },
+  {
+    img: servicePortofolioImg3,
+    title: "banner 3",
+  },
+];
+
+export { datasListService, dataListPortofolio, dataBanner };
