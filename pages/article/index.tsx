@@ -8,6 +8,8 @@ import Container from '@/layout/ContainerTwo'
 import Grid from '@mui/system/Unstable_Grid/Grid'
 import ArticleCardWide from '@/components/card/ArticleCardWide'
 import { Stack } from '@mui/system'
+import Slider from 'react-slick'
+import Image from 'next/image'
 
 interface props {
     twolatestnews: ArticleTypes[]
@@ -29,7 +31,31 @@ const index: NextPage<props> = ({ twolatestnews, allnews }) => {
     }
 
     const RenderCarousel = () => {
-        return <></>
+        const settings = {
+            dots: true,
+            infinite: true,
+            speed: 500,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+        }
+
+        return (
+            <div
+                style={{ position: 'relative', width: '100%', height: '550px' }}
+            >
+                <Slider {...settings}>
+                    <div
+                        style={{
+                            width: '100%',
+                            height: '550px',
+                            position: 'relative',
+                        }}
+                    >
+                        <Image layout="fill" src="/article_slider.jpg" />
+                    </div>
+                </Slider>
+            </div>
+        )
     }
 
     const RenderTrendingTopics = () => {
