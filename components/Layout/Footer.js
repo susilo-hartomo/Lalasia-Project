@@ -13,8 +13,8 @@ const ListFeature = ({ title, listOfFeatures }) => {
 
 			{listOfFeatures.map((item, index) => (
 				<Link key={index} href={item.route}>
-					<a data-aos-delay={`${index * 20 + 140}`} data-aos-duration='500' data-aos-easing='ease-in-out'>
-						<p className='paragraph mb-3 text-paragraph-1' data-aos='fade-left'>
+					<a data-aos-delay={`${index * 40 + 140}`} data-aos-duration='500' data-aos-easing='ease-in-out'>
+						<p className='paragraph mb-3 text-paragraph-1' data-aos='fade-left' data-aos-offset='10'>
 							{item.path}
 						</p>
 					</a>
@@ -39,7 +39,7 @@ export default function Footer() {
 	);
 
 	return (
-		<footer className='my-20 px-8 lg:px-0'>
+		<footer className='lg:my-24 my-16 px-8 lg:px-0'>
 			<div className='container lg:flex mx-auto lg:pt-24 pt-5 border-t-2 border-ligh-white'>
 				<div
 					className='w-3/4'
@@ -53,18 +53,34 @@ export default function Footer() {
 						data-aos='fade-up'
 						data-aos-delay='40'
 						data-aos-duration='700'
+						data-aos-offset='0'
 						data-aos-easing='ease-in-out'>
 						Lalasia is digital agency that help you make better experience iaculis cras in.
 					</p>
 				</div>
 				<div className='lg:w-1/2 pt-8 lg:pt-0 flex justify-between'>
-					<div data-aos='fade-up' data-aos-delay='60' data-aos-duration='500' data-aos-easing='ease-in-out'>
+					<div
+						data-aos='fade-up'
+						data-aos-delay='60'
+						data-aos-duration='500'
+						data-aos-easing='ease-in-out'
+						data-aos-offset='20'>
 						<ListFeature title='Product' listOfFeatures={productLinkList} />
 					</div>
-					<div data-aos='fade-up' data-aos-delay='60' data-aos-duration='500' data-aos-easing='ease-in-out'>
+					<div
+						data-aos='fade-up'
+						data-aos-delay='80'
+						data-aos-duration='500'
+						data-aos-easing='ease-in-out'
+						data-aos-offset='20'>
 						<ListFeature title='Services' listOfFeatures={servicesLinkList} />
 					</div>
-					<div data-aos='fade-up' data-aos-delay='60' data-aos-duration='500' data-aos-easing='ease-in-out'>
+					<div
+						data-aos='fade-up'
+						data-aos-delay='100'
+						data-aos-duration='500'
+						data-aos-easing='ease-in-out'
+						data-aos-offset='20'>
 						<ListFeature title='Follow Us' listOfFeatures={followUsLinkList} />
 					</div>
 				</div>
