@@ -10,6 +10,7 @@ import CountingDesc from '@/components/items/CountingDesc';
 import TestimoniSlick from '@/components/slick/TestimoniSlick';
 import { articles } from 'constants/articles';
 import ArticleCard from '@/components/card/ArticleCard';
+import ArticlesSlick from '../components/slick/ArticlesSlick';
 
 export default function Home() {
 	const renderBanner = () => {
@@ -151,7 +152,7 @@ export default function Home() {
 
 	const renderArticles = () => {
 		return (
-			<div className='container mx-auto'>
+			<div className='container mx-auto mt-44'>
 				<p className='text-secondary-1'>Articles</p>
 				<div className='flex flex-row justify-between'>
 					<div className='w-1/2'>
@@ -161,6 +162,7 @@ export default function Home() {
 								Pellentesque etiam blandit in tincidunt at donec.
 							</p>
 						</div>
+						<ArticlesSlick />
 
 					</div>
 
