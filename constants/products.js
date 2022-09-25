@@ -67,16 +67,16 @@ export const colorProductDetail = {
   price: "$99.98",
   color: [
     {
-      hexColor: "#151411",
+      hexColor: "bg-[#151411]",
     },
     {
-      hexColor: "#314443",
+      hexColor: "bg-[#314443]",
     },
     {
-      hexColor: "#C5A26E",
+      hexColor: "bg-[#C5A26E]",
     },
     {
-      hexColor: "#D8DBE0",
+      hexColor: "bg-[#D8DBE0]",
     },
   ],
 };

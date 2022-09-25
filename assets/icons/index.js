@@ -11,5 +11,7 @@ import leftSlide from './leftSlide.svg';
 import rightSlide from './rightSlide.svg';
 import star from './star.svg';
 import quote from './quote-up.svg';
+import articleNextArrow from './articleNextArrow.svg';
+import articlePrevArrow from './articlePrevArrow.svg';
 
-export { humbergerIcn, cartIcn, userIcn, closeIcn, callRecivedIc, messageIc, awardIc, arrowRightIc, playButtonIc, leftSlide, rightSlide, star, quote };
+export { humbergerIcn, cartIcn, userIcn, closeIcn, callRecivedIc, messageIc, awardIc, arrowRightIc, playButtonIc, leftSlide, rightSlide, star, quote, articleNextArrow, articlePrevArrow };

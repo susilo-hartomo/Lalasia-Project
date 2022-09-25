@@ -12,11 +12,11 @@ export default class TestimoniSlick extends Component {
 			centerMode: true,
 			centerPadding: '300px',
 			infinite: true,
-			speed: 5000,
+			speed: 8000,
 			slidesToShow: 1,
 			slidesToScroll: 1,
 			autoplay: true,
-			autoplaySpeed: 5000,
+			autoplaySpeed: 8000,
 			cssEase: "linear"
 		};
 		return (

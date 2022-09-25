@@ -33,6 +33,7 @@ const Service = () => {
         )
     }
 
+<<<<<<< HEAD
     const renderListService = () => {
         return (
             <div className="mt-28 px-2 flex flex-wrap lg:justify-between gap-5 lg:gap-6">
@@ -56,6 +57,25 @@ const Service = () => {
             </div>
         )
     }
+=======
+	const renderListService = () => {
+		return (
+			<div className='mt-28 px-2 flex flex-wrap lg:justify-between gap-5 lg:gap-6'>
+				{datasListService.map((data, index) => (
+					<div
+						key={index}
+						className='lg:w-[32%]'
+						data-aos='fade-left'
+						data-aos-delay={`${index * 100 + 150}`}
+						data-aos-duration='500'
+						data-aos-easing='ease-in-out'>
+						<ListServiceCard number={data.number} title={data.title} desc={data.description} idx={index} />
+					</div>
+				))}
+			</div>
+		);
+	};
+>>>>>>> dev
 
     const renderPortofolio = () => {
         return (
@@ -88,11 +108,17 @@ const Service = () => {
                             mauris non.
                         </p>
 
+<<<<<<< HEAD
                         <h5 className="text-primary-2 font-bold my-9 text-md underline">
                             View Portofolio
                         </h5>
                     </div>
                 </div>
+=======
+						<h5 className='text-primary-2 font-bold my-9 text-md cursor-pointer'>View Portofolio</h5>
+					</div>
+				</div>
+>>>>>>> dev
 
                 <div className="flex flex-wrap lg:flex-col gap-5 lg:h-[632px] lg:w-ful">
                     {dataListPortofolio.map((data, index) => (
@@ -109,6 +135,7 @@ const Service = () => {
         )
     }
 
+<<<<<<< HEAD
     const renderInteredted = () => {
         return (
             <div className="lg:my-[90px] my-8 px-4 lg:px-8 xl:px-0">
@@ -124,6 +151,15 @@ const Service = () => {
                             Are you interested work with us?
                         </h2>
                     </div>
+=======
+	const renderInteredted = () => {
+		return (
+			<div className='lg:my-[90px] my-8 px-4 lg:px-8 xl:px-0'>
+				<div className='lg:flex lg:gap-20 xl:gap-24 justify-between items-center'>
+					<div className='lg:w-1/2 mb-4 lg:mb-0'>
+						<h2 className='heading w-4/5'>Are you interested work with us?</h2>
+					</div>
+>>>>>>> dev
 
                     <PrimaryButton
                         text="Let's Talk"
