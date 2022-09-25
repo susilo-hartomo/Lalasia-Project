@@ -33,7 +33,8 @@ import article1 from './imgArticle1.png';
 import article2 from './imgArticle2.png';
 import article3 from './imgArticle3.png';
 import product1 from './Product1.png';
-import product2 from './Rectangle2.png'
+import product2 from './Rectangle2.png';
+import filter from './filter.svg';
 
 export {
 	brandImg,
@@ -72,4 +73,5 @@ export {
 	article3,
 	product1,
 	product2,
+	filter,
 };
