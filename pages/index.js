@@ -37,13 +37,15 @@ export default function Home() {
 						<div
 							className='mx-auto lg:w-[810px] mt-[50px] lg:h-[84px] bg-white flex justify-between items-center px-4 gap-[18px]'
 							style={{ boxShadow: '0px 4px 80px rgba(175, 173, 181, 0.2)' }}>
-							<Image className='w-[32px] h-[32px]' src={searchNormal} alt='search' />
+							<div className='w-[32px] h-[32px] relative'>
+								<Image src={searchNormal} alt='search' layout='fill' />
+							</div>
 							<input
-								className='w-[70%] h-[50px] p-2 focus:outline-none text-paragraph-1'
+								className='w-[100%] h-[50px] p-2 focus:outline-none text-paragraph-1'
 								type='search'
 								placeholder='Search Property'
 							/>
-							<PrimaryButton text={'Search'} />
+							<PrimaryButton text={'Search'} onClick={() => alert('press button')} />
 						</div>
 					</div>
 					<div className='w-full h-[480px] relative'>
@@ -163,7 +165,6 @@ export default function Home() {
 							</p>
 						</div>
 						<ArticlesSlick />
-
 					</div>
 
 					<div className='w-1/2'>
