@@ -3,7 +3,7 @@ import BenefitsCard from '@/components/card/BenefitsCard'
 import Layout from '@/components/Layout/index'
 import ProductSlick from '@/components/slick/ProductSlick'
 import Image from 'next/image'
-import { isTemplateSpan } from 'typescript'
+// import { isTemplateSpan } from 'typescript'
 import {
     abstractStars,
     spiral,
