@@ -61,9 +61,9 @@ export default function Navbar() {
 		const timeDelay = [100, 150, 200, 300, 500, 700];
 		return (
 			<nav
-				className={`lg:flex h-full w-full absolute lg:w-auto lg:static z-50 top-[74px] min-h-screen lg:min-h-fit p-4 lg:p-0  bg-white ${
+				className={`lg:flex h-full w-full lg:w-auto lg:static z-50 top-[74px] min-h-screen lg:min-h-fit p-4 lg:p-0  ${
 					isShowMobileNavbar && windowSize.innerWidth < 800
-						? 'translate-x-0 duration-1000 ease-in-out lg:traslate-0 left-0'
+						? 'translate-x-0 duration-1000 ease-in-out lg:traslate-0 left-0 absolute bg-white'
 						: 'left-full'
 				}`}>
 				{navlist.map((item, index) => (
@@ -128,7 +128,7 @@ export default function Navbar() {
 					? 'fixed bg-white w-screen transform ease-in-out duration-1000 -top-[200px] z-50 translate-y-[200px]'
 					: 'relative'
 			}`}>
-			<div className='lg:h-[120px] h-[72px] container px-4 lg:px-0 mx-auto flex items-center justify-between'>
+			<div className='lg:h-[120px] h-[72px] container px-4 xl:px-0 mx-auto flex items-center justify-between'>
 				{renderBrand()}
 				{renderNavlink()}
 				{renderAction()}
