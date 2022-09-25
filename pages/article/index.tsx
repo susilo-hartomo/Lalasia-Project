@@ -12,6 +12,9 @@ import Image from 'next/image'
 import BannerServiceSlick from '@/components/slick/BannerServiceSlick'
 import ArticleCardTwo from '@/components/card/ArticleCardTwo'
 import ArticleButton from '@/components/button/ArticleButton'
+import PrimaryButton from '@/components/button/PrimaryButton'
+
+import { arrowRightIc } from '../../assets/icons'
 
 interface props {
     twolatestnews: ArticleTypes[]
@@ -40,20 +43,26 @@ const index: NextPage<props> = ({ twolatestnews, allnews }) => {
                 <BannerServiceSlick />
                 <div className="flex flex-col justify-between w-4/5 h-2/6  absolute -bottom-20 bg-white mx-auto left-0 right-0 shadow-md p-8">
                     <div className="flex flex-col gap-2 justify-between">
-                        <p>Tips and Trick</p>
-                        <h3>
+                        <p className="text-lg text-paragraph-1">
+                            Tips and Trick
+                        </p>
+                        <h3 className="bold text-2xl font-bold text-title-1">
                             This 400-Square-Foot New York Apartment Is Maximed
                             With Custom Millwork
                         </h3>
 
                         <div className="flex flex-row gap-2">
-                            <div>By Morgan Goldberg</div>
                             <Image
                                 width={28}
                                 height={28}
                                 src={'/avatar_small.png'}
                             />
-                            <div>Tuesday,17 March 2022</div>
+                            <p className="font-bold text-sm leading-4 self-center">
+                                By Morgan Goldberg
+                            </p>
+                            <p className="text-paragraph-1 text-sm leading-4 self-center">
+                                Tuesday,17 March 2022
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -64,12 +73,14 @@ const index: NextPage<props> = ({ twolatestnews, allnews }) => {
     const RenderTrendingTopics = () => {
         return (
             <div className="mt-64 mb-48">
-                <h6 className="text-amber-500 font-bold">Daily News</h6>
-                <h3 className=" font-bold font-title-2">Today top headlines</h3>
+                <h5 className="font-bold text-secondary-1 text-lg">
+                    Daily News
+                </h5>
+                <h2 className="heading">Today top headlines</h2>
                 <div className="flex flex-row mt-4 gap-[26px]">
                     {twolatestnews.map((item, i) => {
                         return (
-                            <div className="w-1/2 bg-cyan-100" key={i}>
+                            <div className="w-1/2" key={i}>
                                 <ArticleCardTwo
                                     title={item.title}
                                     author={item.author}
@@ -77,7 +88,7 @@ const index: NextPage<props> = ({ twolatestnews, allnews }) => {
                                     category={item.category}
                                     thumbnail={item.thumbnail}
                                     date={item.date}
-                                    summary={''}
+                                    summary={item.summary}
                                 />
                             </div>
                         )
@@ -105,10 +116,13 @@ const index: NextPage<props> = ({ twolatestnews, allnews }) => {
 
         return (
             <div className="my-48">
-                <h5 style={{ fontWeight: 'bold' }}>Trending Topics</h5>
-                <h2>Popular Last Week</h2>
+                <h5 className="font-bold text-secondary-1 text-lg">
+                    Trending Topics
+                </h5>
 
-                <div className="flex flex-row gap-8 justify-between my-8">
+                <h2 className="heading">Popular Last Week</h2>
+
+                <div className="flex flex-row gap-8 justify-between my-10">
                     <div className="flex flex-row gap-8">
                         {buttonlist.map((item, index) => {
                             return (
@@ -117,15 +131,6 @@ const index: NextPage<props> = ({ twolatestnews, allnews }) => {
                                     choosed={choosed}
                                     onClickFunction={handleChoosed}
                                 />
-                                // <button
-                                //     key={index}
-                                //     onClick={() => {
-                                //         setChoosed(item)
-                                //     }}
-                                //     className="p-4"
-                                // >
-                                //     {item}
-                                // </button>
                             )
                         })}
                     </div>
@@ -155,7 +160,9 @@ const index: NextPage<props> = ({ twolatestnews, allnews }) => {
                         })}
                 </div>
                 <div className="flex justify-center my-12">
-                    <button>Load More</button>
+                    <button className="bg-gray-50 px-5 py-3.5 border border-gray-100 text-lg font-bold">
+                        Load More
+                    </button>
                 </div>
             </div>
         )
@@ -164,10 +171,13 @@ const index: NextPage<props> = ({ twolatestnews, allnews }) => {
     const RenderNewsLetter = () => {
         return (
             <div className="flex flex-row justify-between my-8">
-                <h2>Subscribe to our newsletter</h2>
-                <button className="p-4 bg-green-300">
-                    <span>Let's Talk</span>
-                </button>
+                <h2 className="heading">Subscribe to our newsletter</h2>
+                <PrimaryButton
+                    text="Let's Talk"
+                    onClick={() => alert('press button')}
+                    icon={arrowRightIc}
+                    width={undefined}
+                />
             </div>
         )
     }

@@ -7,13 +7,7 @@ export default function ArticleCardWide(article: ArticleTypes) {
 
     return (
         <div className="flex flex-row gap-6">
-            <div
-                style={{
-                    position: 'relative',
-                    width: '210px',
-                    height: '210px',
-                }}
-            >
+            <div className="relative min-w-[210px] h-[210px]">
                 <Image
                     layout="fill"
                     src={article.thumbnail}
@@ -21,13 +15,17 @@ export default function ArticleCardWide(article: ArticleTypes) {
                 />
             </div>
             <div className="flex flex-col gap-2 justify-between">
-                <p>{article.category}</p>
-                <h3>{article.title}</h3>
-                <h4>{article.summary}</h4>
+                <p className="text-lg text-paragraph-1">{article.category}</p>
+                <h3 className="bold text-2xl font-bold text-title-1">
+                    {article.title}
+                </h3>
+                <p className="text-lg text-paragraph-1">{article.summary}</p>
                 <div className="flex flex-row gap-2">
-                    <div>{article.author}</div>
                     <Image width={28} height={28} src={article.avatar} />
-                    <div>
+                    <p className="font-bold text-sm leading-4 self-center">
+                        {'By ' + article.author}
+                    </p>
+                    <p className="text-paragraph-1 text-sm leading-4 self-center">
                         {date.toLocaleDateString('en-US', {
                             weekday: 'long',
                         }) +
@@ -38,7 +36,7 @@ export default function ArticleCardWide(article: ArticleTypes) {
                                 month: 'long',
                                 year: 'numeric',
                             })}
-                    </div>
+                    </p>
                 </div>
             </div>
         </div>

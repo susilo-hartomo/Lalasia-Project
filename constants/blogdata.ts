@@ -9,7 +9,7 @@ export const BlogData: ArticleTypes[] = [
         date: new Date(2022, 10, 1).toJSON(),
         thumbnail: '/thumbnail.jpg',
         summary:
-            'Ad Lorem qui esse labore irure consequat est sunt duis ipsum qui excepteur.',
+            'Home terrace decorations are part of every decoration or overall home design. Interiordesign.id – If by chance your house has enough space or space.',
         content: '',
     },
     {
@@ -19,7 +19,8 @@ export const BlogData: ArticleTypes[] = [
         category: 'Color Guide',
         date: new Date(2022, 10, 2).toJSON(),
         thumbnail: '/thumbnail.jpg',
-        summary: 'Laboris consequat mollit consectetur ullamco dolore.',
+        summary:
+            'Home terrace decorations are part of every decoration or overall home design. Interiordesign.id – If by chance your house has enough space or space.',
         content: '',
     },
     {
@@ -29,7 +30,8 @@ export const BlogData: ArticleTypes[] = [
         category: 'Tips and Trick',
         date: new Date(2022, 10, 23).toJSON(),
         thumbnail: '/thumbnail.jpg',
-        summary: 'Eiusmod cupidatat dolore in occaecat culpa. ',
+        summary:
+            'Home terrace decorations are part of every decoration or overall home design. Interiordesign.id – If by chance your house has enough space or space.',
         content: '',
     },
     {
@@ -39,7 +41,8 @@ export const BlogData: ArticleTypes[] = [
         category: 'Color Guide',
         date: new Date(2022, 11, 5).toJSON(),
         thumbnail: '/thumbnail.jpg',
-        summary: 'Eiusmod cupidatat dolore in occaecat culpa. ',
+        summary:
+            'Home terrace decorations are part of every decoration or overall home design. Interiordesign.id – If by chance your house has enough space or space.',
         content: '',
     },
     {
@@ -49,7 +52,8 @@ export const BlogData: ArticleTypes[] = [
         category: 'Tips and Trick',
         date: new Date(2022, 10, 3).toJSON(),
         thumbnail: '/thumbnail.jpg',
-        summary: 'Eiusmod cupidatat dolore in occaecat culpa. ',
+        summary:
+            'Home terrace decorations are part of every decoration or overall home design. Interiordesign.id – If by chance your house has enough space or space.',
         content: '',
     },
 ]

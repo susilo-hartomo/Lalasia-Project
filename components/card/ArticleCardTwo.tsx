@@ -6,7 +6,7 @@ export default function ArticleCard(article: ArticleTypes) {
     const date = new Date(article.date)
 
     return (
-        <div className="flex flex-col gap-1">
+        <div className="flex flex-col gap-2">
             <div className="relative w-full h-[340px]">
                 <Image
                     layout="fill"
@@ -15,13 +15,19 @@ export default function ArticleCard(article: ArticleTypes) {
                     alt={article.thumbnail}
                 />
             </div>
-            <p>{article.category}</p>
-            <h3>{article.title}</h3>
-            <p>{article.summary}</p>
-            <div className="flex flex-row gap-3">
+            <p className="text-lg text-paragraph-1 leading-4 mt-2">
+                {article.category}
+            </p>
+            <h3 className="bold text-2xl font-bold text-title-1">
+                {article.title}
+            </h3>
+            <p className="text-lg text-paragraph-1">{article.summary}</p>
+            <div className="flex flex-row gap-2 mt-1">
                 <Image width={28} height={28} src={article.avatar} />
-                <div>{'By ' + article.author}</div>
-                <div>
+                <p className="font-bold text-sm leading-4 self-center">
+                    {'By ' + article.author}
+                </p>
+                <p className="text-paragraph-1 text-sm leading-4 self-center">
                     {date.toLocaleDateString('en-US', {
                         weekday: 'long',
                     }) +
@@ -32,7 +38,7 @@ export default function ArticleCard(article: ArticleTypes) {
                             month: 'long',
                             year: 'numeric',
                         })}
-                </div>
+                </p>
             </div>
         </div>
     )
