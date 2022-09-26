@@ -1,14 +1,12 @@
 import React from 'react'
 import { NextPage, GetStaticProps, InferGetStaticPropsType } from 'next'
 import { ArticleTypes } from 'lib/types'
-import Layout from '@/components/Layout'
 import { getAllNews, getTwoLatestNews } from 'lib/helper/fetchArticle'
-import ArticleCard from '@/components/card/ArticleCard'
-import Container from '@/layout/ContainerTwo'
-import ArticleCardWide from '@/components/card/ArticleCardWide'
-import Slider from 'react-slick'
 import Image from 'next/image'
 
+import Layout from '@/components/Layout'
+import Container from '@/layout/ContainerTwo'
+import ArticleCardWide from '@/components/card/ArticleCardWide'
 import BannerServiceSlick from '@/components/slick/BannerServiceSlick'
 import ArticleCardTwo from '@/components/card/ArticleCardTwo'
 import ArticleButton from '@/components/button/ArticleButton'
@@ -77,7 +75,7 @@ const index: NextPage<props> = ({ twolatestnews, allnews }) => {
                     Daily News
                 </h5>
                 <h2 className="heading">Today top headlines</h2>
-                <div className="flex flex-row mt-4 gap-[26px]">
+                <div className="lg:flex flex-row mt-4 gap-[26px]">
                     {twolatestnews.map((item, i) => {
                         return (
                             <div className="w-1/2" key={i}>
