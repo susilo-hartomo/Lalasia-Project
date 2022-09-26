@@ -12,8 +12,8 @@ export default function ArticleButton(props: ArticleButtonProps) {
         <div>
             <button
                 className={clsx(
-                    'px-4 py-3.5 font-semibold text-lg',
-                    props.choosed === props.name && 'text-black bg-gray-50',
+                    'px-4 py-3.5 text-lg',
+                    props.choosed === props.name && 'text-black bg-gray-50 font-semibold',
                     props.choosed !== props.name && 'text-gray-400'
                 )}
                 onClick={() => props.onClickFunction(props.name)}
