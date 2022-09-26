@@ -100,7 +100,6 @@ const index: NextPage<props> = ({ twolatestnews, allnews }) => {
         const [choosed, setChoosed] = React.useState('All')
 
         const handleChoosed = (item: string) => {
-            console.log(item)
             setChoosed(item)
         }
 
@@ -114,10 +113,7 @@ const index: NextPage<props> = ({ twolatestnews, allnews }) => {
 
         return (
             <div className="my-48">
-                <h5 className="font-bold text-secondary-1 text-lg">
-                    Trending Topics
-                </h5>
-
+                <h5 className="font-bold text-secondary-1 text-lg">Trending Topics</h5>
                 <h2 className="heading">Popular Last Week</h2>
 
                 <div className="flex flex-row gap-8 justify-between my-10">
@@ -125,7 +121,9 @@ const index: NextPage<props> = ({ twolatestnews, allnews }) => {
                         {buttonlist.map((item, index) => {
                             return (
                                 <ArticleButton
+                                    key={index}
                                     name={item}
+                                    isActiveTab={choosed == item}
                                     choosed={choosed}
                                     onClickFunction={handleChoosed}
                                 />
