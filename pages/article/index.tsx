@@ -141,21 +141,19 @@ const index: NextPage<props> = ({ twolatestnews, allnews }) => {
                                 ? item
                                 : item.category.includes(choosed)
                         })
-                        .map((item, i) => {
-                            return (
-                                <React.Fragment key={i}>
-                                    <ArticleCardWide
-                                        title={item.title}
-                                        author={item.author}
-                                        avatar={item.avatar}
-                                        category={item.category}
-                                        thumbnail={item.thumbnail}
-                                        date={item.date}
-                                        summary={item.summary}
-                                    />
-                                </React.Fragment>
+                        .map((item, i) =>  (
+                            <ArticleCardWide
+                                key={i}
+                                title={item.title}
+                                author={item.author}
+                                avatar={item.avatar}
+                                category={item.category}
+                                thumbnail={item.thumbnail}
+                                date={item.date}
+                                summary={item.summary}
+                            />
                             )
-                        })}
+                        )}
                 </div>
                 <div className="flex justify-center my-12">
                     <button className="bg-gray-50 px-5 py-3.5 border border-gray-100 text-lg font-bold">
