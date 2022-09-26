@@ -179,11 +179,11 @@ const index: NextPage<props> = ({ twolatestnews, allnews }) => {
     return (
         <Layout title={'article'} content={'asdas'}>
             <Container>
-                <RenderHeadArticle />
-                <RenderCarousel />
-                <RenderTrendingTopics />
-                <RenderAllNews />
-                <RenderNewsLetter />
+                {RenderHeadArticle()}
+                {RenderCarousel()}
+                {RenderTrendingTopics()}
+                {RenderAllNews()}
+                {RenderNewsLetter()}
             </Container>
         </Layout>
     )
