@@ -15,6 +15,7 @@ import ArticleButton from '@/components/button/ArticleButton'
 import PrimaryButton from '@/components/button/PrimaryButton'
 
 import { arrowRightIc } from '../../assets/icons'
+import BannerArticleSlick from '@/components/slick/BannerArticleSlick'
 
 interface props {
     twolatestnews: ArticleTypes[]
@@ -40,7 +41,7 @@ const index: NextPage<props> = ({ twolatestnews, allnews }) => {
         }
         return (
             <div className="w-auto h-auto relative my-12">
-                <BannerServiceSlick />
+                <BannerArticleSlick />
                 <div className="flex flex-col justify-between w-4/5 h-2/6  absolute -bottom-20 bg-white mx-auto left-0 right-0 shadow-md p-8">
                     <div className="flex flex-col gap-2 justify-between">
                         <p className="text-lg text-paragraph-1">
@@ -134,7 +135,10 @@ const index: NextPage<props> = ({ twolatestnews, allnews }) => {
                             )
                         })}
                     </div>
-                    <div className="flex text-center p-4">Filter</div>
+                    <button className="flex flex-row  p-4 bg-gray-50 px-5 py-3.5 border border-gray-100 text-lg font-bold">
+                        <Image src="/sort.png" width={30} height={30} />
+                        <p className="font-semibold">Filter</p>
+                    </button>
                 </div>
                 <div className="flex flex-col gap-8">
                     {allnews
