@@ -1,3 +1,4 @@
+import dateToFormatted from 'lib/helper/dateToFormatted'
 import { ArticleTypes } from 'lib/types'
 import Image from 'next/image'
 import React from 'react'
@@ -26,16 +27,7 @@ export default function ArticleCardWide(article: ArticleTypes) {
                         {'By ' + article.author}
                     </p>
                     <p className="text-paragraph-1 text-sm leading-4 self-center">
-                        {date.toLocaleDateString('en-US', {
-                            weekday: 'long',
-                        }) +
-                            ', ' +
-                            date.getDay() +
-                            ' ' +
-                            date.toLocaleDateString('en-US', {
-                                month: 'long',
-                                year: 'numeric',
-                            })}
+                        {dateToFormatted(article.date)}
                     </p>
                 </div>
             </div>

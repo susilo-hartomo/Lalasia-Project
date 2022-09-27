@@ -5,6 +5,7 @@ import 'slick-carousel/slick/slick-theme.css'
 import Image from 'next/image'
 import { dataBanner } from '../../constants/Services'
 import { leftSlide, rightSlide } from '../../assets/icons'
+import { ArticleTypes } from 'lib/types'
 
 function SampleNextArrow(props) {
     const { className, style, onClick } = props
@@ -46,43 +47,48 @@ function SamplePrevArrow(props) {
     )
 }
 
-export default class SimpleSlider extends Component {
-    render() {
-        const settings = {
-            dots: true,
-            infinite: true,
-            speed: 500,
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            nextArrow: <SampleNextArrow />,
-            prevArrow: <SamplePrevArrow />,
-            dotsClass: 'slick-dots !bottom-32',
-            responsive: [
-                {
-                    breakpoint: 480,
-                    settings: {
-                        nextArrow: null,
-                        prevArrow: null,
-                    },
-                },
-            ],
-        }
-        return (
-            <Slider {...settings}>
-                {dataBanner.map((item, i) => (
-                    <div
-                        key={i}
-                        className="w-full h-[200px] lg:h-[550px] relative"
-                    >
-                        <Image
-                            src={item.img}
-                            alt={item.title}
-                            layout="fill"
-                            objectFit="fill"
-                        />
-                    </div>
-                ))}
-            </Slider>
-        )
-    }
+interface SimpleSliderTypes {
+    imageList: ArticleTypes[]
+    handleNext: (number) => void
 }
+
+const SimpleSlider = (props: SimpleSliderTypes) => {
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        nextArrow: <SampleNextArrow />,
+        prevArrow: <SamplePrevArrow />,
+        afterChange: (index) => {
+            props.handleNext(index)
+        },
+        dotsClass: 'slick-dots !bottom-32',
+        responsive: [
+            {
+                breakpoint: 480,
+                settings: {
+                    nextArrow: null,
+                    prevArrow: null,
+                },
+            },
+        ],
+    }
+    return (
+        <Slider {...settings}>
+            {props.imageList.map((item, i) => (
+                <div key={i} className="w-full h-[200px] lg:h-[550px] relative">
+                    <Image
+                        src={item.thumbnail}
+                        alt={item.title}
+                        layout="fill"
+                        objectFit="fill"
+                    />
+                </div>
+            ))}
+        </Slider>
+    )
+}
+
+export default SimpleSlider

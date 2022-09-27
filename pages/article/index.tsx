@@ -14,6 +14,7 @@ import PrimaryButton from '@/components/button/PrimaryButton'
 
 import { arrowRightIc } from '../../assets/icons'
 import BannerArticleSlick from '@/components/slick/BannerArticleSlick'
+import dateToFormatted from '../../lib/helper/dateToFormatted'
 
 interface props {
     twolatestnews: ArticleTypes[]
@@ -37,17 +38,26 @@ const index: NextPage<props> = ({ twolatestnews, allnews }) => {
         const settings = {
             dots: true,
         }
+
+        const [imageOrder, setImageOrder] = React.useState(0)
+
+        const handleImageOrder = (index: number) => {
+            setImageOrder(index)
+        }
+
         return (
             <div className="w-auto h-auto relative my-12">
-                <BannerArticleSlick />
+                <BannerArticleSlick
+                    handleNext={handleImageOrder}
+                    imageList={twolatestnews}
+                />
                 <div className="flex flex-col justify-between w-4/5 h-2/6  absolute -bottom-20 bg-white mx-auto left-0 right-0 shadow-md p-8">
                     <div className="flex flex-col gap-2 justify-between">
                         <p className="text-lg text-paragraph-1">
-                            Tips and Trick
+                            {twolatestnews[imageOrder].category}
                         </p>
                         <h3 className="bold text-2xl font-bold text-title-1">
-                            This 400-Square-Foot New York Apartment Is Maximed
-                            With Custom Millwork
+                            {twolatestnews[imageOrder].title}
                         </h3>
 
                         <div className="flex flex-row gap-2">
@@ -57,10 +67,12 @@ const index: NextPage<props> = ({ twolatestnews, allnews }) => {
                                 src={'/avatar_small.png'}
                             />
                             <p className="font-bold text-sm leading-4 self-center">
-                                By Morgan Goldberg
+                                {'By ' + twolatestnews[imageOrder].author}
                             </p>
                             <p className="text-paragraph-1 text-sm leading-4 self-center">
-                                Tuesday,17 March 2022
+                                {dateToFormatted(
+                                    twolatestnews[imageOrder].date
+                                )}
                             </p>
                         </div>
                     </div>
@@ -131,7 +143,7 @@ const index: NextPage<props> = ({ twolatestnews, allnews }) => {
                             )
                         })}
                     </div>
-                    <button className="flex flex-row  p-4 bg-gray-50 px-5 py-3.5 border border-gray-100 text-lg font-bold">
+                    <button className="flex flex-row  p-4 bg-gray-50 px-4 py-3.5 border border-gray-100 text-lg font-bold gap-2">
                         <Image src="/sort.png" width={30} height={30} />
                         <p className="font-semibold">Filter</p>
                     </button>
