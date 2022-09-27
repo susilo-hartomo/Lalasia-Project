@@ -15,30 +15,34 @@ export default function ArticleCard(article: ArticleTypes) {
                     alt={article.thumbnail}
                 />
             </div>
-            <p className="text-lg text-paragraph-1 leading-4 mt-2">
-                {article.category}
-            </p>
-            <h3 className="bold text-2xl font-bold text-title-1">
-                {article.title}
-            </h3>
-            <p className="text-lg text-paragraph-1">{article.summary}</p>
-            <div className="flex flex-row gap-2 mt-1">
-                <Image width={28} height={28} src={article.avatar} />
-                <p className="font-bold text-sm leading-4 self-center">
-                    {'By ' + article.author}
+            <div className="mt-5">
+                <p className="paragraph text-paragraph-1">
+                    {article.category}
                 </p>
-                <p className="text-paragraph-1 text-sm leading-4 self-center">
-                    {date.toLocaleDateString('en-US', {
-                        weekday: 'long',
-                    }) +
-                        ', ' +
-                        date.getDay() +
-                        ' ' +
-                        date.toLocaleDateString('en-US', {
-                            month: 'long',
-                            year: 'numeric',
-                        })}
-                </p>
+                <h3 className="heading text-title-1 my-3">
+                    {article.title}
+                </h3>
+                <p className="paragraph text-paragraph-1">{article.summary}</p>
+                <div className="flex lg:gap-6 justify-between lg:justify-start mt-4">
+                    <div className='flex'>
+                        <Image width={28} height={28} src={article.avatar} />
+                        <p className="font-bold text-sm leading-4 self-center ml-2">
+                            {'By ' + article.author}
+                        </p>
+                    </div>
+                    <p className="text-paragraph-1 text-sm leading-4 self-center">
+                        {date.toLocaleDateString('en-US', {
+                            weekday: 'long',
+                        }) +
+                            ', ' +
+                            date.getDay() +
+                            ' ' +
+                            date.toLocaleDateString('en-US', {
+                                month: 'long',
+                                year: 'numeric',
+                            })}
+                    </p>
+                </div>
             </div>
         </div>
     )

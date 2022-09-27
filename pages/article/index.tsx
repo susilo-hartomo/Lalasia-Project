@@ -1,14 +1,12 @@
 import React from 'react'
 import { NextPage, GetStaticProps, InferGetStaticPropsType } from 'next'
 import { ArticleTypes } from 'lib/types'
-import Layout from '@/components/Layout'
 import { getAllNews, getTwoLatestNews } from 'lib/helper/fetchArticle'
-import ArticleCard from '@/components/card/ArticleCard'
-import Container from '@/layout/ContainerTwo'
-import ArticleCardWide from '@/components/card/ArticleCardWide'
-import Slider from 'react-slick'
 import Image from 'next/image'
 
+import Container from '@/components/Layout/ContainerTwo'
+import Layout from '@/components/Layout'
+import ArticleCardWide from '@/components/card/ArticleCardWide'
 import BannerServiceSlick from '@/components/slick/BannerServiceSlick'
 import ArticleCardTwo from '@/components/card/ArticleCardTwo'
 import ArticleButton from '@/components/button/ArticleButton'
@@ -78,7 +76,7 @@ const index: NextPage<props> = ({ twolatestnews, allnews }) => {
                     Daily News
                 </h5>
                 <h2 className="heading">Today top headlines</h2>
-                <div className="flex flex-row mt-4 gap-[26px]">
+                <div className="lg:flex flex-row mt-4 gap-[26px]">
                     {twolatestnews.map((item, i) => {
                         return (
                             <div className="w-1/2" key={i}>
@@ -103,7 +101,6 @@ const index: NextPage<props> = ({ twolatestnews, allnews }) => {
         const [choosed, setChoosed] = React.useState('All')
 
         const handleChoosed = (item: string) => {
-            console.log(item)
             setChoosed(item)
         }
 
@@ -117,10 +114,7 @@ const index: NextPage<props> = ({ twolatestnews, allnews }) => {
 
         return (
             <div className="my-48">
-                <h5 className="font-bold text-secondary-1 text-lg">
-                    Trending Topics
-                </h5>
-
+                <h5 className="font-bold text-secondary-1 text-lg">Trending Topics</h5>
                 <h2 className="heading">Popular Last Week</h2>
 
                 <div className="flex flex-row gap-8 justify-between my-10">
@@ -128,7 +122,9 @@ const index: NextPage<props> = ({ twolatestnews, allnews }) => {
                         {buttonlist.map((item, index) => {
                             return (
                                 <ArticleButton
+                                    key={index}
                                     name={item}
+                                    isActiveTab={choosed == item}
                                     choosed={choosed}
                                     onClickFunction={handleChoosed}
                                 />
@@ -147,21 +143,19 @@ const index: NextPage<props> = ({ twolatestnews, allnews }) => {
                                 ? item
                                 : item.category.includes(choosed)
                         })
-                        .map((item, i) => {
-                            return (
-                                <React.Fragment key={i}>
-                                    <ArticleCardWide
-                                        title={item.title}
-                                        author={item.author}
-                                        avatar={item.avatar}
-                                        category={item.category}
-                                        thumbnail={item.thumbnail}
-                                        date={item.date}
-                                        summary={item.summary}
-                                    />
-                                </React.Fragment>
+                        .map((item, i) =>  (
+                            <ArticleCardWide
+                                key={i}
+                                title={item.title}
+                                author={item.author}
+                                avatar={item.avatar}
+                                category={item.category}
+                                thumbnail={item.thumbnail}
+                                date={item.date}
+                                summary={item.summary}
+                            />
                             )
-                        })}
+                        )}
                 </div>
                 <div className="flex justify-center my-12">
                     <button className="bg-gray-50 px-5 py-3.5 border border-gray-100 text-lg font-bold">
@@ -189,11 +183,11 @@ const index: NextPage<props> = ({ twolatestnews, allnews }) => {
     return (
         <Layout title={'article'} content={'asdas'}>
             <Container>
-                <RenderHeadArticle />
-                <RenderCarousel />
-                <RenderTrendingTopics />
-                <RenderAllNews />
-                <RenderNewsLetter />
+                {RenderHeadArticle()}
+                {RenderCarousel()}
+                {RenderTrendingTopics()}
+                {RenderAllNews()}
+                {RenderNewsLetter()}
             </Container>
         </Layout>
     )

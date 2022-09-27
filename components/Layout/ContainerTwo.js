@@ -3,8 +3,13 @@ import React from 'react'
 
 export default function ContainerTwo({ children }) {
     return (
-        <Container disableGutters={true} sx={{ maxWidth: '1240px !important' }}>
-            {children}
-        </Container>
+        <div>
+            <Container
+                disableGutters={true}
+                sx={{ maxWidth: '1240px !important' }}
+            >
+                {children}
+            </Container>
+        </div>
     )
 }
