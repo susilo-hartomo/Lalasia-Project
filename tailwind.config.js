@@ -79,13 +79,16 @@ module.exports = {
           },
         },
         h3: {
-          fontSize: '24px',
+          fontSize: '20px',
           '@media (min-width: 640px)': {
-            fontSize: '26px',
+            fontSize: '24px',
           },
         },
         h4: {
-          fontSize: '20px',
+          fontSize: '18px',
+          '@media (min-width: 640px)': {
+            fontSize: '20px',
+          },
         },
         h5: {
           fontSize: '14px',
