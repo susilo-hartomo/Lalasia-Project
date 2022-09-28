@@ -37,7 +37,7 @@ export default function aboutUs() {
   const renderOurMission = () => {
     return (
       <div className="lg:my-[90px] px-4 lg:px-8 xl:px-0">
-        <h5 className="text-secondary-1 mb-4">Our Mission</h5>
+        <h5 className="heading text-secondary-1 mb-4">Our Mission</h5>
         <div className="lg:flex  lg:gap-20 xl:gap-24 ">
           <div className="lg:w-1/2">
             <h2 className="heading pr-6">
@@ -85,8 +85,8 @@ export default function aboutUs() {
     return (
       <div className="lg:my-[90px] lg:px-8 xl:px-0">
         <div className="lg:my-[90px] px-4 lg:px-8 xl:px-0">
-          <h5 className="text-secondary-1 mb-4">Our Team</h5>
-          <div className="lg:flex  lg:gap-20 xl:gap-24 ">
+          <h5 className="heading text-secondary-1 mb-4">Our Team</h5>
+          <div className="lg:flex lg:gap-20 xl:gap-24 ">
             <div className="lg:w-1/2">
               <h2 className="heading pr-6">Meet our leading and strong team</h2>
             </div>

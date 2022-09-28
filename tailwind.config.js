@@ -97,7 +97,7 @@ module.exports = {
           },
         },
         p: {
-          fontFamily: 'EudoxusSans-reguler',
+          fontFamily: 'EudoxusSans-Reguler',
           opacity: '80%',
           color: theme('paragraph-1'),
           lineHeight: '180%',

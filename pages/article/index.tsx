@@ -51,30 +51,28 @@ const index: NextPage<props> = ({ twolatestnews, allnews }) => {
                     handleNext={handleImageOrder}
                     imageList={twolatestnews}
                 />
-                <div className="flex flex-col justify-between w-4/5 h-2/6  absolute -bottom-20 bg-white mx-auto left-0 right-0 shadow-md p-8">
-                    <div className="flex flex-col gap-2 justify-between">
-                        <p className="text-lg text-paragraph-1">
+                <div className="w-4/5  absolute -bottom-20 bg-white mx-auto left-0 right-0 px-10 py-12"
+                    style={{boxShadow: '0px 4px 140px rgba(175, 173, 181, 0.2)'}}
+                >
+                    <div className="mb-4">
+                        <p className="paragraph text-paragraph-1 mb-3">
                             {twolatestnews[imageOrder].category}
                         </p>
-                        <h3 className="bold text-2xl font-bold text-title-1">
+                        <h3 className="heading text-title-1">
                             {twolatestnews[imageOrder].title}
                         </h3>
+                    </div>
 
-                        <div className="flex flex-row gap-2">
-                            <Image
-                                width={28}
-                                height={28}
-                                src={'/avatar_small.png'}
-                            />
-                            <p className="font-bold text-sm leading-4 self-center">
+                    <div className="flex items-center">
+                        <div className='flex mr-6 items-center'>
+                            <Image width={28} height={28} src={'/avatar_small.png'}/>
+                            <p className="font-extrabold text-sm ml-3" style={{fontFamily: 'EudoxusSans-Bold'}}>
                                 {'By ' + twolatestnews[imageOrder].author}
                             </p>
-                            <p className="text-paragraph-1 text-sm leading-4 self-center">
-                                {dateToFormatted(
-                                    twolatestnews[imageOrder].date
-                                )}
-                            </p>
                         </div>
+                        <p className="text-paragraph-1 text-sm">
+                            {dateToFormatted(twolatestnews[imageOrder].date)}
+                        </p>
                     </div>
                 </div>
             </div>
@@ -84,11 +82,11 @@ const index: NextPage<props> = ({ twolatestnews, allnews }) => {
     const RenderTrendingTopics = () => {
         return (
             <div className="mt-64 mb-48">
-                <h5 className="font-bold text-secondary-1 text-lg">
-                    Daily News
-                </h5>
-                <h2 className="heading">Today top headlines</h2>
-                <div className="lg:flex flex-row mt-4 gap-[26px]">
+                <div className='mb-8'>
+                    <h5 className="heading text-secondary-1 mb-4">Daily News</h5>
+                    <h2 className="heading">Today top headlines</h2>
+                </div>
+                <div className="lg:flex gap-[26px]">
                     {twolatestnews.map((item, i) => {
                         return (
                             <div className="w-1/2" key={i}>
@@ -126,11 +124,13 @@ const index: NextPage<props> = ({ twolatestnews, allnews }) => {
 
         return (
             <div className="my-48">
-                <h5 className="font-bold text-secondary-1 text-lg">Trending Topics</h5>
-                <h2 className="heading">Popular Last Week</h2>
+                <div className='mt-8'>
+                    <h5 className="heading text-secondary-1 mb-4">Trending Topics</h5>
+                    <h2 className="heading">Popular Last Week</h2>
+                </div>
 
-                <div className="flex flex-row gap-8 justify-between my-10">
-                    <div className="flex flex-row gap-8">
+                <div className="flex justify-between my-10">
+                    <div className="flex gap-4">
                         {buttonlist.map((item, index) => {
                             return (
                                 <ArticleButton
@@ -143,7 +143,7 @@ const index: NextPage<props> = ({ twolatestnews, allnews }) => {
                             )
                         })}
                     </div>
-                    <button className="flex flex-row  p-4 bg-gray-50 px-4 py-3.5 border border-gray-100 text-lg font-bold gap-2">
+                    <button className="flex  p-4 hover:bg-light-white px-4 py-3.5 border border-gray-100 text-lg font-bold gap-2">
                         <Image src="/sort.png" width={30} height={30} />
                         <p className="font-semibold">Filter</p>
                     </button>
@@ -170,7 +170,7 @@ const index: NextPage<props> = ({ twolatestnews, allnews }) => {
                         )}
                 </div>
                 <div className="flex justify-center my-12">
-                    <button className="bg-gray-50 px-5 py-3.5 border border-gray-100 text-lg font-bold">
+                    <button className="px-10 py-4 border border-gray-100 text-lg font-bold hover:bg-light-white">
                         Load More
                     </button>
                 </div>
