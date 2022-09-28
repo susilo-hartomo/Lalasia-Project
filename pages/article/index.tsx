@@ -81,7 +81,7 @@ const index: NextPage<props> = ({ twolatestnews, allnews }) => {
 
     const RenderTrendingTopics = () => {
         return (
-            <div className="mt-64 mb-48">
+            <div className="mt-64 mb-48 px-4 lg:px-0">
                 <div className='mb-8'>
                     <h5 className="heading text-secondary-1 mb-4">Daily News</h5>
                     <h2 className="heading">Today top headlines</h2>
@@ -89,7 +89,7 @@ const index: NextPage<props> = ({ twolatestnews, allnews }) => {
                 <div className="lg:flex gap-[26px]">
                     {twolatestnews.map((item, i) => {
                         return (
-                            <div className="w-1/2" key={i}>
+                            <div className="lg:w-1/2 mt-12 lg:mt-0" key={i}>
                                 <ArticleCardTwo
                                     title={item.title}
                                     author={item.author}
