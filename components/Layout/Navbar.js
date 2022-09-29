@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
+import Hamburger from 'hamburger-react'
 
 import { brandImg, brandText } from '../../assets/images'
 import { humbergerIcn, cartIcn, userIcn, closeIcn } from '../../assets/icons'
@@ -73,9 +74,10 @@ export default function Navbar() {
     return (
       <nav
         className={`lg:flex h-full w-full lg:w-auto lg:static z-50 top-[74px] min-h-screen lg:min-h-fit p-4 lg:p-0  ${
-          isShowMobileNavbar && windowSize.innerWidth < 800
+          windowSize.innerWidth < 800 &&
+          (isShowMobileNavbar
             ? 'translate-x-0 duration-1000 ease-in-out lg:traslate-0 left-0 absolute bg-white'
-            : 'left-full'
+            : 'left-full translate-x-full duration-1000 ease-in-out absolute')
         }`}
       >
         {navlist.map((item, index) => (
@@ -108,9 +110,10 @@ export default function Navbar() {
   const renderAction = () => (
     <div
       className={`w-screen absolute lg:w-auto lg:static ${
-        isShowMobileNavbar && windowSize.innerWidth < 800
+        windowSize.innerWidth < 800 &&
+        (isShowMobileNavbar
           ? ' -bottom-[420px] z-50 left-0 translate-x-0 duration-1000 ease-in-out lg:traslate-0 border-t-2 border-light-white pt-8 px-4'
-          : 'lg:static left-full'
+          : 'lg:static -bottom-[420px] left-full translate-x-full duration-1000 ease-in-out absolute')
       }`}
     >
       <div className="lg:flex items-center">
@@ -137,15 +140,15 @@ export default function Navbar() {
 
     return (
       <div className="lg:hidden">
-        {isShowMobileNavbar ? (
-          <div className="cursor-pointer" onClick={togleNavbar}>
-            <Image src={closeIcn} alt="chart icon" width={30} height={30} />
-          </div>
-        ) : (
-          <div className="cursor-pointer" onClick={togleNavbar}>
-            <Image src={humbergerIcn} alt="chart icon" width={30} height={30} />
-          </div>
-        )}
+        <Hamburger
+          duration={0.8}
+          toggled={isShowMobileNavbar}
+          toggle={togleNavbar}
+          size={24}
+          rounded
+          hideOutline={false}
+          color="#518581"
+        />
       </div>
     )
   }
