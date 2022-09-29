@@ -1,8 +1,8 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Can U see Mee
-Link : [Lalasia](https://prismatic-pothos-b90742.netlify.app/)
-UI kit : [Figma](https://www.figma.com/community/file/1129496513774660135)
+- Link Demo : [Lalasia](https://prismatic-pothos-b90742.netlify.app/)
+- UI kit : [Figma](https://www.figma.com/community/file/1129496513774660135)
 
 ## We are not allone
 1. [Susilo](https://github.com/susilo-hartomo)  (FE / Project Manager / AboutUsPage)
@@ -10,6 +10,11 @@ UI kit : [Figma](https://www.figma.com/community/file/1129496513774660135)
 3. [Tita]() (FE / ProductPage)
 4. [Rofi](https://github.com/arrofirezasatria) (FE / ArticlePage)
 5. [Akbar](https://github.com/akbaridc) (FE / ServicePage)
+
+## Technology
+1. [React-Slick](https://react-slick.neostack.com/) (React Slick)
+2. [React-Hamburger](https://hamburger-react.netlify.app/) (React Hamburger)
+3. [Scroll-Animation](https://michalsnik.github.io/aos/) (Aos Animation scroll)
 
 ## Getting Started
 
