@@ -17,205 +17,194 @@ import BannerArticleSlick from '@/components/slick/BannerArticleSlick'
 import dateToFormatted from '../../lib/helper/dateToFormatted'
 
 interface props {
-    twolatestnews: ArticleTypes[]
-    allnews: ArticleTypes[]
+  twolatestnews: ArticleTypes[]
+  allnews: ArticleTypes[]
 }
 
 const index: NextPage<props> = ({ twolatestnews, allnews }) => {
-    const RenderHeadArticle = () => {
-        return (
-            <div className="mb-4 mt-16">
-                <h1 className="text-title-1 text-center ">Article</h1>
-                <p className="text-center w-1/2 mx-auto px-4 text-paragraph-1">
-                    We display product based on latest products we have, if you
-                    want to see old products please enter the name of the item
-                </p>
-            </div>
-        )
+  const RenderHeadArticle = () => {
+    return (
+      <div className="mb-4 mt-16">
+        <h1 className="text-title-1 text-center text-bold  ">Article</h1>
+        <p className="text-center md:w-1/2 w-5/6 mx-auto px-4 text-paragraph-1">
+          We display product based on latest products we have, if you want to
+          see old products please enter the name of the item
+        </p>
+      </div>
+    )
+  }
+
+  const RenderCarousel = () => {
+    const settings = {
+      dots: true,
     }
 
-    const RenderCarousel = () => {
-        const settings = {
-            dots: true,
-        }
+    const [imageOrder, setImageOrder] = React.useState(0)
 
-        const [imageOrder, setImageOrder] = React.useState(0)
-
-        const handleImageOrder = (index: number) => {
-            setImageOrder(index)
-        }
-
-        return (
-            <div className="w-auto h-auto relative my-12">
-                <BannerArticleSlick
-                    handleNext={handleImageOrder}
-                    imageList={twolatestnews}
-                />
-                <div className="flex flex-col justify-between w-4/5 h-2/6  absolute -bottom-20 bg-white mx-auto left-0 right-0 shadow-md p-8">
-                    <div className="flex flex-col gap-2 justify-between">
-                        <p className="text-lg text-paragraph-1">
-                            {twolatestnews[imageOrder].category}
-                        </p>
-                        <h3 className="bold text-2xl font-bold text-title-1">
-                            {twolatestnews[imageOrder].title}
-                        </h3>
-
-                        <div className="flex flex-row gap-2">
-                            <Image
-                                width={28}
-                                height={28}
-                                src={'/avatar_small.png'}
-                            />
-                            <p className="font-bold text-sm leading-4 self-center">
-                                {'By ' + twolatestnews[imageOrder].author}
-                            </p>
-                            <p className="text-paragraph-1 text-sm leading-4 self-center">
-                                {dateToFormatted(
-                                    twolatestnews[imageOrder].date
-                                )}
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        )
-    }
-
-    const RenderTrendingTopics = () => {
-        return (
-            <div className="mt-64 mb-48">
-                <h5 className="font-bold text-secondary-1 text-lg">
-                    Daily News
-                </h5>
-                <h2 className="heading">Today top headlines</h2>
-                <div className="lg:flex flex-row mt-4 gap-[26px]">
-                    {twolatestnews.map((item, i) => {
-                        return (
-                            <div className="w-1/2" key={i}>
-                                <ArticleCardTwo
-                                    title={item.title}
-                                    author={item.author}
-                                    avatar={item.avatar}
-                                    category={item.category}
-                                    thumbnail={item.thumbnail}
-                                    date={item.date}
-                                    summary={item.summary}
-                                />
-                            </div>
-                        )
-                    })}
-                </div>
-            </div>
-        )
-    }
-
-    const RenderAllNews = () => {
-        const [choosed, setChoosed] = React.useState('All')
-
-        const handleChoosed = (item: string) => {
-            setChoosed(item)
-        }
-
-        const buttonlist = [
-            'All',
-            'Tips and Trick',
-            'Interior Design',
-            'Design Inspiration',
-            'Color Guide',
-        ]
-
-        return (
-            <div className="my-48">
-                <h5 className="font-bold text-secondary-1 text-lg">Trending Topics</h5>
-                <h2 className="heading">Popular Last Week</h2>
-
-                <div className="flex flex-row gap-8 justify-between my-10">
-                    <div className="flex flex-row gap-8">
-                        {buttonlist.map((item, index) => {
-                            return (
-                                <ArticleButton
-                                    key={index}
-                                    name={item}
-                                    isActiveTab={choosed == item}
-                                    choosed={choosed}
-                                    onClickFunction={handleChoosed}
-                                />
-                            )
-                        })}
-                    </div>
-                    <button className="flex flex-row  p-4 bg-gray-50 px-4 py-3.5 border border-gray-100 text-lg font-bold gap-2">
-                        <Image src="/sort.png" width={30} height={30} />
-                        <p className="font-semibold">Filter</p>
-                    </button>
-                </div>
-                <div className="flex flex-col gap-8">
-                    {allnews
-                        .filter((item) => {
-                            return choosed === 'All'
-                                ? item
-                                : item.category.includes(choosed)
-                        })
-                        .map((item, i) =>  (
-                            <ArticleCardWide
-                                key={i}
-                                title={item.title}
-                                author={item.author}
-                                avatar={item.avatar}
-                                category={item.category}
-                                thumbnail={item.thumbnail}
-                                date={item.date}
-                                summary={item.summary}
-                            />
-                            )
-                        )}
-                </div>
-                <div className="flex justify-center my-12">
-                    <button className="bg-gray-50 px-5 py-3.5 border border-gray-100 text-lg font-bold">
-                        Load More
-                    </button>
-                </div>
-            </div>
-        )
-    }
-
-    const RenderNewsLetter = () => {
-        return (
-            <div className="flex flex-row justify-between my-8">
-                <h2 className="heading">Subscribe to our newsletter</h2>
-                <PrimaryButton
-                    text="Let's Talk"
-                    onClick={() => alert('press button')}
-                    icon={arrowRightIc}
-                    width={undefined}
-                />
-            </div>
-        )
+    const handleImageOrder = (index: number) => {
+      setImageOrder(index)
     }
 
     return (
-        <Layout title={'article'} content={'asdas'}>
-            <Container>
-                {RenderHeadArticle()}
-                {RenderCarousel()}
-                {RenderTrendingTopics()}
-                {RenderAllNews()}
-                {RenderNewsLetter()}
-            </Container>
-        </Layout>
+      <div className="w-auto h-auto relative my-12">
+        <BannerArticleSlick
+          handleNext={handleImageOrder}
+          imageList={twolatestnews}
+        />
+        <div className="flex flex-col justify-between w-4/5 md:h-2/6 h-3/6  absolute md:-bottom-20 -bottom-8 bg-white mx-auto left-0 right-0 shadow-md md:p-8 p-2">
+          <div className="flex flex-col gap-2 justify-between">
+            <p className="md:text-lg text-sm text-paragraph-1">
+              {twolatestnews[imageOrder].category}
+            </p>
+            <h3 className="bold md:text-2xl text-sm font-bold text-title-1">
+              {twolatestnews[imageOrder].title}
+            </h3>
+
+            <div className="flex flex-row gap-2">
+              <Image width={28} height={28} src={'/avatar_small.png'} />
+              <p className="font-bold text-sm leading-4 self-center">
+                {'By ' + twolatestnews[imageOrder].author}
+              </p>
+              <p className="text-paragraph-1 text-sm leading-4 self-center">
+                {dateToFormatted(twolatestnews[imageOrder].date)}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     )
+  }
+
+  const RenderTrendingTopics = () => {
+    return (
+      <div className="mt-64 mb-48">
+        <h5 className="font-bold text-secondary-1 text-lg">Daily News</h5>
+        <h2 className="heading">Today top headlines</h2>
+        <div className="lg:flex flex-row mt-4 gap-[26px]">
+          {twolatestnews.map((item, i) => {
+            return (
+              <div className="md:w-1/2 w-full " key={i}>
+                <ArticleCardTwo
+                  title={item.title}
+                  author={item.author}
+                  avatar={item.avatar}
+                  category={item.category}
+                  thumbnail={item.thumbnail}
+                  date={item.date}
+                  summary={item.summary}
+                />
+              </div>
+            )
+          })}
+        </div>
+      </div>
+    )
+  }
+
+  const RenderAllNews = () => {
+    const [choosed, setChoosed] = React.useState('All')
+
+    const handleChoosed = (item: string) => {
+      setChoosed(item)
+    }
+
+    const buttonlist = [
+      'All',
+      'Tips and Trick',
+      'Interior Design',
+      'Design Inspiration',
+      'Color Guide',
+    ]
+
+    return (
+      <div className="my-48">
+        <h5 className="font-bold text-secondary-1 text-lg">Trending Topics</h5>
+        <h2 className="heading">Popular Last Week</h2>
+
+        <div className="flex flex-row gap-8 justify-between my-10">
+          <div className="flex flex-row gap-8">
+            {buttonlist.map((item, index) => {
+              return (
+                <ArticleButton
+                  key={index}
+                  name={item}
+                  isActiveTab={choosed == item}
+                  choosed={choosed}
+                  onClickFunction={handleChoosed}
+                />
+              )
+            })}
+          </div>
+          <button className="flex flex-row  p-4 bg-gray-50 px-4 py-3.5 border border-gray-100 text-lg font-bold gap-2">
+            <Image src="/sort.png" width={30} height={30} />
+            <p className="font-semibold">Filter</p>
+          </button>
+        </div>
+        <div className="flex flex-col gap-8">
+          {allnews
+            .filter((item) => {
+              return choosed === 'All' ? item : item.category.includes(choosed)
+            })
+            .map((item, i) => (
+              <ArticleCardWide
+                key={i}
+                title={item.title}
+                author={item.author}
+                avatar={item.avatar}
+                category={item.category}
+                thumbnail={item.thumbnail}
+                date={item.date}
+                summary={item.summary}
+              />
+            ))}
+        </div>
+        <div className="flex justify-center my-12">
+          <button className="bg-gray-50 px-5 py-3.5 border border-gray-100 text-lg font-bold">
+            Load More
+          </button>
+        </div>
+      </div>
+    )
+  }
+
+  const RenderNewsLetter = () => {
+    return (
+      <div className="flex flex-row justify-between my-8">
+        <h2 className="heading">Subscribe to our newsletter</h2>
+        <PrimaryButton
+          text="Let's Talk"
+          onClick={() => alert('press button')}
+          icon={arrowRightIc}
+          width={undefined}
+        />
+      </div>
+    )
+  }
+
+  return (
+    <Layout title={'article'} content={'asdas'}>
+      <Container>
+        {RenderHeadArticle()}
+        {RenderCarousel()}
+        {RenderTrendingTopics()}
+        {RenderAllNews()}
+        {RenderNewsLetter()}
+      </Container>
+    </Layout>
+  )
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-    const twolatestnews: ArticleTypes[] = await getTwoLatestNews()
-    const allnews: ArticleTypes[] = await getAllNews()
+  const twolatestnews: ArticleTypes[] = await getTwoLatestNews()
+  const allnews: ArticleTypes[] = await getAllNews()
 
-    return {
-        props: {
-            twolatestnews,
-            allnews,
-        },
-        revalidate: 180,
-    }
+  return {
+    props: {
+      twolatestnews,
+      allnews,
+    },
+    revalidate: 180,
+  }
 }
 
 export default index
