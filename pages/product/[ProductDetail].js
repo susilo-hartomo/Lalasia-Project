@@ -36,7 +36,11 @@ const ProductDetail = () => {
                 return (
                   <div
                     key={index}
-                    className={`h-8 w-8 lg:h-12 lg:w-12 ${data.hexColor} border-0`}
+                    className={
+                      'h-8 w-8 lg:h-12 lg:w-12 border-0 cursor-pointer'
+                    }
+                    style={{ backgroundColor: `#${data.hexColor}` }}
+                    onClick={() => console.log('change color')}
                   ></div>
                 )
               })}
