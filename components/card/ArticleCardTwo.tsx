@@ -26,12 +26,14 @@ export default function ArticleCard(article: ArticleTypes) {
         </p>
         <div className="flex lg:gap-6 justify-between lg:justify-start mt-4">
           <div className="flex">
-            <Image width={28} height={28} src={article.avatar} />
-            <p className="font-bold text-sm leading-4 self-center ml-2">
+            <div className="md:w-7 md:h-7 w-5 h-5 relative">
+              <Image src={article.avatar} layout="fill" />
+            </div>
+            <p className="font-bold md:text-sm text-xs leading-4 self-center ml-2">
               {'By ' + article.author}
             </p>
           </div>
-          <p className="text-paragraph-1 text-sm leading-4 self-center">
+          <p className="text-paragraph-1 md:text-sm text-xs leading-4 self-center">
             {dateToFormatted(article.date)}
           </p>
         </div>

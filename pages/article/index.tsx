@@ -15,6 +15,7 @@ import PrimaryButton from '@/components/button/PrimaryButton'
 import { arrowRightIc } from '../../assets/icons'
 import BannerArticleSlick from '@/components/slick/BannerArticleSlick'
 import dateToFormatted from '../../lib/helper/dateToFormatted'
+import dateToFormattedSimple from '../../lib/helper/dateToFormattedSimple'
 
 interface props {
   twolatestnews: ArticleTypes[]
@@ -25,8 +26,10 @@ const index: NextPage<props> = ({ twolatestnews, allnews }) => {
   const RenderHeadArticle = () => {
     return (
       <div className="mb-4 mt-16">
-        <h1 className="text-title-1 text-center text-bold  ">Article</h1>
-        <p className="text-center md:w-1/2 w-5/6 mx-auto px-4 text-paragraph-1">
+        <h1 className="text-title-1 text-center font-bold md:text-6xl text-2xl md:mb-5 mb-4 ">
+          Article
+        </h1>
+        <p className="text-center md:w-1/2 w-11/12 mx-auto px-4 text-paragraph-1">
           We display product based on latest products we have, if you want to
           see old products please enter the name of the item
         </p>
@@ -51,22 +54,23 @@ const index: NextPage<props> = ({ twolatestnews, allnews }) => {
           handleNext={handleImageOrder}
           imageList={twolatestnews}
         />
-        <div className="flex flex-col justify-between w-4/5 md:h-2/6 h-3/6  absolute md:-bottom-20 -bottom-8 bg-white mx-auto left-0 right-0 shadow-md md:p-8 p-2">
-          <div className="flex flex-col gap-2 justify-between">
-            <p className="md:text-lg text-sm text-paragraph-1">
+        <div className="flex flex-col justify-between w-4/5 md:h-2/6 h-[113px]  absolute md:-bottom-20 -bottom-[3.3rem] bg-white mx-auto left-0 right-0 shadow-md md:p-8 p-3">
+          <div className="flex flex-col justify-between h-full">
+            <p className="md:text-lg text-xs text-paragraph-1">
               {twolatestnews[imageOrder].category}
             </p>
-            <h3 className="bold md:text-2xl text-sm font-bold text-title-1">
+            <h3 className="bold md:text-2xl text-sm font-bold text-title-1 line-clamp-2 md:mb-0 mb-1 capitalize">
               {twolatestnews[imageOrder].title}
             </h3>
-
             <div className="flex flex-row gap-2">
-              <Image width={28} height={28} src={'/avatar_small.png'} />
-              <p className="font-bold text-sm leading-4 self-center">
+              <div className="md:w-7 md:h-7 w-5 h-5 relative ">
+                <Image src={'/avatar_small.png'} layout="fill" />
+              </div>
+              <p className="font-bold md:text-sm text-xs leading-4 self-center ">
                 {'By ' + twolatestnews[imageOrder].author}
               </p>
-              <p className="text-paragraph-1 text-sm leading-4 self-center">
-                {dateToFormatted(twolatestnews[imageOrder].date)}
+              <p className="text-paragraph-1 md:text-sm text-xs leading-4 self-center grow md:text-left text-right">
+                {dateToFormattedSimple(twolatestnews[imageOrder].date)}
               </p>
             </div>
           </div>
@@ -77,8 +81,10 @@ const index: NextPage<props> = ({ twolatestnews, allnews }) => {
 
   const RenderTrendingTopics = () => {
     return (
-      <div className="mt-64 mb-48">
-        <h5 className="font-bold text-secondary-1 text-lg">Daily News</h5>
+      <div className="md:mt-64 md:mb-48 mt-40 mb-12">
+        <h5 className="font-bold text-secondary-1 md:text-lg text-sm">
+          Daily News
+        </h5>
         <h2 className="heading">Today top headlines</h2>
         <div className="lg:flex flex-row mt-4 gap-[26px]">
           {twolatestnews.map((item, i) => {
@@ -117,12 +123,13 @@ const index: NextPage<props> = ({ twolatestnews, allnews }) => {
     ]
 
     return (
-      <div className="my-48">
-        <h5 className="font-bold text-secondary-1 text-lg">Trending Topics</h5>
+      <div className="md:my-48 my-32">
+        <h5 className="font-bold text-secondary-1 md:text-lg text-sm">
+          Trending Topics
+        </h5>
         <h2 className="heading">Popular Last Week</h2>
-
-        <div className="flex flex-row gap-8 justify-between my-10">
-          <div className="flex flex-row gap-8">
+        <div className="flex flex-row gap-8 justify-between md:my-10 my-4">
+          <div className="flex flex-row gap-8 overflow-x-auto">
             {buttonlist.map((item, index) => {
               return (
                 <ArticleButton
@@ -135,7 +142,7 @@ const index: NextPage<props> = ({ twolatestnews, allnews }) => {
               )
             })}
           </div>
-          <button className="flex flex-row  p-4 bg-gray-50 px-4 py-3.5 border border-gray-100 text-lg font-bold gap-2">
+          <button className="md:flex hidden flex-row  p-4 bg-gray-50 px-4 py-3.5 border border-gray-100 text-lg font-bold gap-2 ">
             <Image src="/sort.png" width={30} height={30} />
             <p className="font-semibold">Filter</p>
           </button>
@@ -159,7 +166,7 @@ const index: NextPage<props> = ({ twolatestnews, allnews }) => {
             ))}
         </div>
         <div className="flex justify-center my-12">
-          <button className="bg-gray-50 px-5 py-3.5 border border-gray-100 text-lg font-bold">
+          <button className="bg-gray-50 md:px-5 md:py-3.5 px-4 py-3 border border-gray-100 md:text-lg text-base font-bold">
             Load More
           </button>
         </div>
@@ -169,14 +176,16 @@ const index: NextPage<props> = ({ twolatestnews, allnews }) => {
 
   const RenderNewsLetter = () => {
     return (
-      <div className="flex flex-row justify-between my-8">
-        <h2 className="heading">Subscribe to our newsletter</h2>
-        <PrimaryButton
-          text="Let's Talk"
-          onClick={() => alert('press button')}
-          icon={arrowRightIc}
-          width={undefined}
-        />
+      <div className="flex md:flex-row flex-col md:justify-between justify-start my-8">
+        <h2 className="heading md:mb-0 mb-4">Subscribe to our newsletter</h2>
+        <div className="flex flex-start whitespace-nowrap">
+          <PrimaryButton
+            text="Let's Talk"
+            onClick={() => alert('press button')}
+            icon={arrowRightIc}
+            width={undefined}
+          />
+        </div>
       </div>
     )
   }
