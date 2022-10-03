@@ -37,6 +37,7 @@ export default function ArticleCard(article: ArticleTypes) {
             {dateToFormatted(article.date)}
           </p>
         </div>
+
       </div>
     </div>
   )

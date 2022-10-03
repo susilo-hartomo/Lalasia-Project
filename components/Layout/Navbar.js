@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
+import Hamburger from 'hamburger-react'
 
 import { brandImg, brandText } from '../../assets/images'
 import { humbergerIcn, cartIcn, userIcn, closeIcn } from '../../assets/icons'
@@ -35,11 +36,11 @@ export default function Navbar() {
 
     if (windowSize.innerWidth > 800 && isShowMobileNavbar) {
       setIsShowMobileNavbar(false)
-      document.getElementsByTagName('body')[0].style = ''
+      document.getElementsByTagName('body')[0].removeAttribute('style')
     }
 
     if (!isShowMobileNavbar) {
-      document.getElementsByTagName('body')[0].style = ''
+      document.getElementsByTagName('body')[0].removeAttribute('style')
     }
 
     return () => {
@@ -51,11 +52,18 @@ export default function Navbar() {
   const renderBrand = () => (
     <Link href="/">
       <a>
-        <div className="flex items-center">
-          <div className="mr-3">
+        <div className="flex items-center min-h-[42px]">
+          <div className="mr-3 min-w-[42px]">
             <Image src={brandImg} alt="Lalasia Brand" width={42} height={42} />
           </div>
-          <Image src={brandText} alt="Lalasia Brand" width={76} height={18.7} />
+          <div className="min-w-[76px]">
+            <Image
+              src={brandText}
+              alt="Lalasia Brand"
+              width={76}
+              height={18.7}
+            />
+          </div>
         </div>
       </a>
     </Link>
@@ -66,9 +74,10 @@ export default function Navbar() {
     return (
       <nav
         className={`lg:flex h-full w-full lg:w-auto lg:static z-50 top-[74px] min-h-screen lg:min-h-fit p-4 lg:p-0  ${
-          isShowMobileNavbar && windowSize.innerWidth < 800
+          windowSize.innerWidth < 800 &&
+          (isShowMobileNavbar
             ? 'translate-x-0 duration-1000 ease-in-out lg:traslate-0 left-0 absolute bg-white'
-            : 'left-full'
+            : 'left-full translate-x-full duration-1000 ease-in-out absolute')
         }`}
       >
         {navlist.map((item, index) => (
@@ -86,7 +95,7 @@ export default function Navbar() {
                   : `lg:mx-[30px]`
               } ${
                 isShowMobileNavbar
-                  ? `left-6 -translate-x-6 duration-1000 ease-in-out transition delay-${timeDelay[index]}`
+                  ? `left-36 -translate-x-36 duration-${timeDelay[index]} ease-in-out transition delay-${timeDelay[index]}`
                   : 'left-rull'
               }`}
             >
@@ -98,43 +107,55 @@ export default function Navbar() {
     )
   }
 
-  const togleNavbar = () => {
-    if (!isShowMobileNavbar) {
-      document.getElementsByTagName('body')[0].style =
-        'height: 100vh; overflow:hidden'
-    } else {
-      document.getElementsByTagName('body')[0].style = ''
-    }
-    setIsShowMobileNavbar(!isShowMobileNavbar)
-  }
-
   const renderAction = () => (
-    <div>
-      {isShowMobileNavbar ? (
-        <div className="lg:hidden cursor-pointer" onClick={togleNavbar}>
-          <Image src={closeIcn} alt="chart icon" width={30} height={30} />
-        </div>
-      ) : (
-        <div className="lg:hidden cursor-pointer" onClick={togleNavbar}>
-          <Image src={humbergerIcn} alt="chart icon" width={30} height={30} />
-        </div>
-      )}
-      <div className="lg:flex items-center hidden">
+    <div
+      className={`w-screen absolute lg:w-auto lg:static ${
+        windowSize.innerWidth < 800 &&
+        (isShowMobileNavbar
+          ? ' -bottom-[420px] z-50 left-0 translate-x-0 duration-1000 ease-in-out lg:traslate-0 border-t-2 border-light-white pt-8 px-4'
+          : 'lg:static -bottom-[420px] left-full translate-x-full duration-1000 ease-in-out absolute')
+      }`}
+    >
+      <div className="lg:flex items-center">
         <div className="cursor-pointer">
           <Image src={cartIcn} alt="chart icon" width={30} height={30} />
         </div>
-        <div className="ml-6 cursor-pointer">
+        <div className="lg:ml-6 mt-6 lg:mt-0 cursor-pointer">
           <Image src={userIcn} alt="user icon" width={30} height={30} />
         </div>
       </div>
     </div>
   )
 
+  const renderToggleMobile = () => {
+    const togleNavbar = () => {
+      if (!isShowMobileNavbar) {
+        document.getElementsByTagName('body')[0].style =
+          'height: 100vh; overflow:hidden'
+      } else {
+        document.getElementsByTagName('body')[0].style = ''
+      }
+      setIsShowMobileNavbar(!isShowMobileNavbar)
+    }
+
+    return (
+      <div className="lg:hidden">
+        <Hamburger
+          duration={0.8}
+          toggled={isShowMobileNavbar}
+          toggle={togleNavbar}
+          size={24}
+          rounded
+          hideOutline={false}
+          color="#518581"
+        />
+      </div>
+    )
+  }
+
   return (
     <header
       className={`border-b-2 border-solid border-light-white w-screen ${
-        isShowMobileNavbar ? '' : 'overflow-hidden'
-      } ${
         scrollTop > 125
           ? 'fixed bg-white transform ease-in-out duration-1000 -top-[200px] z-50 translate-y-[200px]'
           : 'relative'
@@ -144,6 +165,7 @@ export default function Navbar() {
         {renderBrand()}
         {renderNavlink()}
         {renderAction()}
+        {renderToggleMobile()}
       </div>
     </header>
   )
