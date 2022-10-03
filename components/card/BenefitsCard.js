@@ -3,12 +3,14 @@ import Image from 'next/image';
 
 function BenefitsCard({ img, name, desc }) {
 	return (
-		<div className='w-full lg:w-fit mt-5 lg:mt-0'>
+		<div className='lg:w-fit mt-5 lg:mt-0 mx-7'>
 			<div
-				className='w-full lg:w-[394px] h-[285px] px-6 py-6'
+				className='lg:w-[394px] lg:h-[285px] w-[327px] h-[194px] lg:px-6 px-4 lg:py-6 py-4'
 				style={{ boxShadow: '0px 4px 100px rgba(175, 173, 181, 0.1)' }}>
-				<Image src={img} alt='iconBenefit1' />
-				<h3 className='font-bold mt-6 mb-5 text-title-1'>{name}</h3>
+				<div className='w-11 h-11 lg:w-[62px] lg:h-[62px] mb-[14px] lg:mb-6'>
+					<Image src={img} alt='iconBenefit1' />
+				</div>
+				<h3 className='font-bold lg:mb-5 mb-[6px] text-title-1'>{name}</h3>
 				<p className='text-paragraph-1'>{desc}</p>
 			</div>
 		</div>
