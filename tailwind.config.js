@@ -115,5 +115,6 @@ module.exports = {
         },
       })
     }),
+    require('@tailwindcss/line-clamp'),
   ],
 }
