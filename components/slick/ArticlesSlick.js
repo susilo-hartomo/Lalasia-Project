@@ -15,9 +15,9 @@ function SampleNextArrow(props) {
             className={`${className} z-20`}
             style={{ ...style, display: 'block', right: 90, width: 252, height: 52, top: 505 }}
             onClick={onClick}>
-            <div className='w-full'>
-                <Image src={articleNextArrow} />
-            </div>
+            {/* <div className='w-full'> */}
+            <Image src={articleNextArrow} />
+            {/* </div> */}
         </div>
     );
 }
@@ -29,9 +29,9 @@ function SamplePrevArrow(props) {
             className={`${className} z-20`}
             style={{ ...style, display: 'block', left: 360, width: 252, height: 52, top: 495 }}
             onClick={onClick}>
-            <div className='w-full'>
-                <Image src={articlePrevArrow} />
-            </div>
+            {/* <div className='w-full'> */}
+            <Image src={articlePrevArrow} />
+            {/* </div> */}
         </div>
     );
 }
@@ -50,18 +50,10 @@ export default class ArticlesSlick extends Component {
                 {
                     breakpoint: 1024,
                     settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 3,
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
                         infinite: true,
                         dots: true,
-                    },
-                },
-                {
-                    breakpoint: 600,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 2,
-                        initialSlide: 2,
                     },
                 },
                 {
