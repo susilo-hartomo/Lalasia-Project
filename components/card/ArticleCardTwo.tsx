@@ -7,7 +7,7 @@ export default function ArticleCard(article: ArticleTypes) {
   const date = new Date(article.date)
 
   return (
-    <div className="flex flex-col gap-2 md:mb-0 mb-5">
+    <div data-aos="fade-up" className="flex flex-col gap-2 md:mb-0 mb-5">
       <div className="relative w-full md:h-[340px] h-[200px]">
         <Image
           layout="fill"
@@ -37,7 +37,6 @@ export default function ArticleCard(article: ArticleTypes) {
             {dateToFormatted(article.date)}
           </p>
         </div>
-
       </div>
     </div>
   )
