@@ -11,7 +11,7 @@ export default function ArticleCard(article: ArticleTypes) {
       <div className="relative w-full md:h-[340px] h-[200px]">
         <Image
           layout="fill"
-          src={'/thumbnail.jpg'}
+          src={article.thumbnail}
           objectFit="cover"
           alt={article.thumbnail}
         />

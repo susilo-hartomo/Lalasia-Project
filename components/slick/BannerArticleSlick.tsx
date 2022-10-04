@@ -78,7 +78,11 @@ const SimpleSlider = (props: SimpleSliderTypes) => {
   return (
     <Slider {...settings}>
       {props.imageList.map((item, i) => (
-        <div key={i} className="w-full h-[200px] lg:h-[550px] relative">
+        <div
+          data-aos="fade-up"
+          key={i}
+          className="w-full h-[200px] lg:h-[550px] relative"
+        >
           <Image
             src={item.thumbnail}
             alt={item.title}

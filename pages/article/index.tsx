@@ -76,7 +76,7 @@ const index: NextPage<props> = ({ twolatestnews, allnews }) => {
             </h3>
             <div className="flex flex-row gap-2">
               <div className="md:w-7 md:h-7 w-5 h-5 relative ">
-                <Image src={'/avatar_small.png'} layout="fill" />
+                <Image src={twolatestnews[imageOrder].avatar} layout="fill" />
               </div>
               <p className="font-bold md:text-sm text-xs leading-4 self-center ">
                 {'By ' + twolatestnews[imageOrder].author}
@@ -164,7 +164,10 @@ const index: NextPage<props> = ({ twolatestnews, allnews }) => {
               )
             })}
           </div>
-          <button className="md:flex hidden flex-row  p-4 bg-gray-50 px-4 py-3.5 border border-gray-100 text-lg font-bold gap-2 ">
+          <button
+            data-aos="fade-up"
+            className="md:flex hidden flex-row  p-4 bg-gray-50 px-4 py-3.5 border border-gray-100 text-lg font-bold gap-2 "
+          >
             <Image src="/sort.png" width={30} height={30} />
             <p className="font-semibold">Filter</p>
           </button>
