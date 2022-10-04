@@ -67,19 +67,19 @@ export const colorProductDetail = {
   price: '$99.98',
   color: [
     {
-      image: '',
+      image: aestetic,
       hexColor: '151411',
     },
     {
-      image: '',
+      image: lamp,
       hexColor: '314443',
     },
     {
-      image: '',
+      image: bookshelf,
       hexColor: 'C5A26E',
     },
     {
-      image: '',
+      image: sofa,
       hexColor: 'D8DBE0',
     },
   ],

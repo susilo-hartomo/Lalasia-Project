@@ -7,9 +7,14 @@ import ProductCard from '@/components/card/ProductCard'
 import { useState } from 'react'
 
 const ProductDetail = () => {
+  const [image, setImage] = useState('')
   const [isReadMore, setIsReadMore] = useState(true)
   const toggleReadMore = () => {
     setIsReadMore(!isReadMore)
+  }
+
+  const handleColorImg = (data) => {
+    setImage(data)
   }
 
   const renderProductDetail = () => {
@@ -18,7 +23,7 @@ const ProductDetail = () => {
         <div className="lg:flex lg:flex-wrap lg:gap-10">
           <div className="w-full h-[327px] relative lg:w-1/2 lg:h-[600px]">
             <Image
-              src={colorProductDetail.img}
+              src={image ? image : colorProductDetail.img}
               alt="Services image brand"
               layout="fill"
               objectFit="cover"
@@ -40,7 +45,7 @@ const ProductDetail = () => {
                       'h-8 w-8 lg:h-12 lg:w-12 border-0 cursor-pointer'
                     }
                     style={{ backgroundColor: `#${data.hexColor}` }}
-                    onClick={() => console.log('change color')}
+                    onClick={handleColorImg.bind(this, data.image)}
                   ></div>
                 )
               })}
