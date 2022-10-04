@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-const plugin = require('tailwindcss/plugin')
+const plugin = require('tailwindcss/plugin');
 
 module.exports = {
   content: [
@@ -79,7 +79,7 @@ module.exports = {
           },
         },
         h3: {
-          fontSize: '20px',
+          fontSize: '16px',
           '@media (min-width: 640px)': {
             fontSize: '24px',
           },
@@ -113,8 +113,8 @@ module.exports = {
             fontSize: '18px',
           },
         },
-      })
+      });
     }),
     require('@tailwindcss/line-clamp'),
   ],
-}
+};

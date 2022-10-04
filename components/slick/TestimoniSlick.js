@@ -10,14 +10,43 @@ export default class TestimoniSlick extends Component {
 		const settings = {
 			className: 'center variable-width slider overflow-hidden',
 			centerMode: true,
-			centerPadding: '300px',
+			centerPadding: '360px',
 			infinite: true,
 			speed: 8000,
 			slidesToShow: 1,
 			slidesToScroll: 1,
 			autoplay: true,
 			autoplaySpeed: 8000,
-			cssEase: "linear"
+			cssEase: "linear",
+			responsive: [
+				{
+					breakpoint: 1024,
+					settings: {
+						slidesToShow: 3,
+						slidesToScroll: 3,
+						infinite: true,
+						dots: true,
+					},
+				},
+				{
+					breakpoint: 600,
+					settings: {
+						slidesToShow: 2,
+						slidesToScroll: 2,
+						initialSlide: 2,
+					},
+				},
+				{
+					breakpoint: 480,
+					settings: {
+						slidesToShow: 1,
+						slidesToScroll: 1,
+						centerPadding: '10px',
+						nextArrow: null,
+						prevArrow: null,
+					},
+				},
+			],
 		};
 		return (
 			<Slider {...settings} className='my-12'>
