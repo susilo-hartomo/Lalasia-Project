@@ -29,7 +29,7 @@ const index: NextPage<props> = ({ twolatestnews, allnews }) => {
         <h1 className="text-title-1 text-center font-bold md:text-6xl text-2xl md:mb-5 mb-4 ">
           Article
         </h1>
-        <p className="text-center md:w-1/2 w-11/12 mx-auto px-4 text-paragraph-1">
+        <p className="text-center md:w-1/2 w-11/12 mx-auto md:px-4 text-paragraph-1">
           We display product based on latest products we have, if you want to
           see old products please enter the name of the item
         </p>
@@ -129,7 +129,7 @@ const index: NextPage<props> = ({ twolatestnews, allnews }) => {
         </h5>
         <h2 className="heading">Popular Last Week</h2>
         <div className="flex flex-row gap-8 justify-between md:my-10 my-4">
-          <div className="flex flex-row gap-8 overflow-x-auto">
+          <div className="flex flex-row md:gap-8 gap-5 overflow-x-auto">
             {buttonlist.map((item, index) => {
               return (
                 <ArticleButton

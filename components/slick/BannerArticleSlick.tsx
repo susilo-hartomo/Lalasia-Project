@@ -64,7 +64,7 @@ const SimpleSlider = (props: SimpleSliderTypes) => {
     afterChange: (index) => {
       props.handleNext(index)
     },
-    dotsClass: 'slick-dots md:!bottom-32 bottom-0',
+    dotsClass: 'slick-dots md:!bottom-32 !bottom-16',
     responsive: [
       {
         breakpoint: 480,
