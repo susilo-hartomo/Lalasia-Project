@@ -7,7 +7,7 @@ export default function ArticleCardWide(article: ArticleTypes) {
   const date = new Date(article.date)
 
   return (
-    <div className="flex flex-row md:gap-6 gap-5">
+    <div data-aos="fade-up" className=" flex flex-row md:gap-6 gap-5">
       <div className="relative md:min-w-[210px] md:h-[210px] min-w-[110px] h-[110px]">
         <Image layout="fill" src={article.thumbnail} objectFit="cover" />
       </div>

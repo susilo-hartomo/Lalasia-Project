@@ -64,7 +64,7 @@ const SimpleSlider = (props: SimpleSliderTypes) => {
     afterChange: (index) => {
       props.handleNext(index)
     },
-    dotsClass: 'slick-dots md:!bottom-32 bottom-0',
+    dotsClass: 'slick-dots md:!bottom-32 !bottom-16',
     responsive: [
       {
         breakpoint: 480,
@@ -78,7 +78,11 @@ const SimpleSlider = (props: SimpleSliderTypes) => {
   return (
     <Slider {...settings}>
       {props.imageList.map((item, i) => (
-        <div key={i} className="w-full h-[200px] lg:h-[550px] relative">
+        <div
+          data-aos="fade-up"
+          key={i}
+          className="w-full h-[200px] lg:h-[550px] relative"
+        >
           <Image
             src={item.thumbnail}
             alt={item.title}

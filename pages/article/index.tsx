@@ -17,6 +17,9 @@ import BannerArticleSlick from '@/components/slick/BannerArticleSlick'
 import dateToFormatted from '../../lib/helper/dateToFormatted'
 import dateToFormattedSimple from '../../lib/helper/dateToFormattedSimple'
 
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+
 interface props {
   twolatestnews: ArticleTypes[]
   allnews: ArticleTypes[]
@@ -26,10 +29,16 @@ const index: NextPage<props> = ({ twolatestnews, allnews }) => {
   const RenderHeadArticle = () => {
     return (
       <div className="mb-4 mt-16">
-        <h1 className="text-title-1 text-center font-bold md:text-6xl text-2xl md:mb-5 mb-4 ">
+        <h1
+          data-aos="fade-up"
+          className="text-title-1 text-center font-bold md:text-6xl text-2xl md:mb-5 mb-4 "
+        >
           Article
         </h1>
-        <p className="text-center md:w-1/2 w-11/12 mx-auto px-4 text-paragraph-1">
+        <p
+          data-aos="fade-up"
+          className="text-center md:w-1/2 w-11/12 mx-auto md:px-4 text-paragraph-1"
+        >
           We display product based on latest products we have, if you want to
           see old products please enter the name of the item
         </p>
@@ -54,7 +63,10 @@ const index: NextPage<props> = ({ twolatestnews, allnews }) => {
           handleNext={handleImageOrder}
           imageList={twolatestnews}
         />
-        <div className="flex flex-col justify-between w-4/5 md:h-2/6 h-[113px]  absolute md:-bottom-20 -bottom-[3.3rem] bg-white mx-auto left-0 right-0 shadow-md md:p-8 p-3">
+        <div
+          data-aos="fade-up"
+          className="flex flex-col justify-between w-4/5 md:h-2/6 h-[113px]  absolute md:-bottom-20 -bottom-[3.3rem] bg-white mx-auto left-0 right-0 shadow-md md:p-8 p-3"
+        >
           <div className="flex flex-col justify-between h-full">
             <p className="md:text-lg text-xs text-paragraph-1">
               {twolatestnews[imageOrder].category}
@@ -64,7 +76,7 @@ const index: NextPage<props> = ({ twolatestnews, allnews }) => {
             </h3>
             <div className="flex flex-row gap-2">
               <div className="md:w-7 md:h-7 w-5 h-5 relative ">
-                <Image src={'/avatar_small.png'} layout="fill" />
+                <Image src={twolatestnews[imageOrder].avatar} layout="fill" />
               </div>
               <p className="font-bold md:text-sm text-xs leading-4 self-center ">
                 {'By ' + twolatestnews[imageOrder].author}
@@ -82,14 +94,19 @@ const index: NextPage<props> = ({ twolatestnews, allnews }) => {
   const RenderTrendingTopics = () => {
     return (
       <div className="md:mt-64 md:mb-48 mt-40 mb-12">
-        <h5 className="font-bold text-secondary-1 md:text-lg text-sm">
+        <h5
+          data-aos="fade-up"
+          className="font-bold text-secondary-1 md:text-lg text-sm"
+        >
           Daily News
         </h5>
-        <h2 className="heading">Today top headlines</h2>
+        <h2 data-aos="fade-up" className="heading">
+          Today top headlines
+        </h2>
         <div className="lg:flex flex-row mt-4 gap-[26px]">
           {twolatestnews.map((item, i) => {
             return (
-              <div className="md:w-1/2 w-full " key={i}>
+              <div data-aos="fade-up" className="md:w-1/2 w-full " key={i}>
                 <ArticleCardTwo
                   title={item.title}
                   author={item.author}
@@ -124,12 +141,17 @@ const index: NextPage<props> = ({ twolatestnews, allnews }) => {
 
     return (
       <div className="md:my-48 my-32">
-        <h5 className="font-bold text-secondary-1 md:text-lg text-sm">
+        <h5
+          data-aos="fade-up"
+          className="font-bold text-secondary-1 md:text-lg text-sm"
+        >
           Trending Topics
         </h5>
-        <h2 className="heading">Popular Last Week</h2>
+        <h2 data-aos="fade-up" className="heading">
+          Popular Last Week
+        </h2>
         <div className="flex flex-row gap-8 justify-between md:my-10 my-4">
-          <div className="flex flex-row gap-8 overflow-x-auto">
+          <div className="flex flex-row md:gap-8 gap-5 overflow-x-auto">
             {buttonlist.map((item, index) => {
               return (
                 <ArticleButton
@@ -142,7 +164,10 @@ const index: NextPage<props> = ({ twolatestnews, allnews }) => {
               )
             })}
           </div>
-          <button className="md:flex hidden flex-row  p-4 bg-gray-50 px-4 py-3.5 border border-gray-100 text-lg font-bold gap-2 ">
+          <button
+            data-aos="fade-up"
+            className="md:flex hidden flex-row  p-4 bg-gray-50 px-4 py-3.5 border border-gray-100 text-lg font-bold gap-2 "
+          >
             <Image src="/sort.png" width={30} height={30} />
             <p className="font-semibold">Filter</p>
           </button>
@@ -165,7 +190,7 @@ const index: NextPage<props> = ({ twolatestnews, allnews }) => {
               />
             ))}
         </div>
-        <div className="flex justify-center my-12">
+        <div data-aos="fade-up" className="flex justify-center my-12">
           <button className="bg-gray-50 md:px-5 md:py-3.5 px-4 py-3 border border-gray-100 md:text-lg text-base font-bold">
             Load More
           </button>
@@ -177,8 +202,10 @@ const index: NextPage<props> = ({ twolatestnews, allnews }) => {
   const RenderNewsLetter = () => {
     return (
       <div className="flex md:flex-row flex-col md:justify-between justify-start my-8">
-        <h2 className="heading md:mb-0 mb-4">Subscribe to our newsletter</h2>
-        <div className="flex flex-start whitespace-nowrap">
+        <h2 data-aos="fade-up" className="heading md:mb-0 mb-4">
+          Subscribe to our newsletter
+        </h2>
+        <div data-aos="fade-up" className="flex flex-start whitespace-nowrap">
           <PrimaryButton
             text="Let's Talk"
             onClick={() => alert('press button')}
@@ -189,6 +216,10 @@ const index: NextPage<props> = ({ twolatestnews, allnews }) => {
       </div>
     )
   }
+
+  React.useEffect(() => {
+    AOS.init()
+  }, [])
 
   return (
     <Layout title={'article'} content={'asdas'}>
