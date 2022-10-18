@@ -19,7 +19,7 @@ import VideoPlayer from '@/components/items/VideoPlayer'
 export default function aboutUs() {
   const renderBanner = () => {
     return (
-      <div className="lg:mt-[100px] mt-[72px] w-full">
+      <div className="lg:mt-[100px] mt-[50px] w-full">
         <h1
           data-aos="fade-up"
           data-aos-duration="800"
@@ -153,60 +153,59 @@ export default function aboutUs() {
   const renderOurTeam = () => {
     return (
       <div className="lg:my-[90px] lg:px-8 xl:px-0">
-        <div className="lg:my-[90px] px-4 lg:px-8 xl:px-0">
-          <h5
-            className="heading text-secondary-1 mb-4"
-            data-aos="fade-up"
-            data-aos-duration="500"
-            data-aos-delay={`${10}`}
-            data-aos-easing="ease-in-sine"
-          >
-            Our Team
-          </h5>
-          <div className="lg:flex lg:gap-20 xl:gap-24 ">
-            <div className="lg:w-1/2">
-              <h2
-                className="heading pr-6"
-                data-aos="fade-up"
-                data-aos-duration="500"
-                data-aos-delay={`${40}`}
-                data-aos-easing="ease-in-sine"
-              >
-                Meet our leading and strong team
-              </h2>
-            </div>
-            <div
-              className="lg:w-1/2 lg:pl-20"
+        <h5
+          className="heading text-secondary-1 mb-4"
+          data-aos="fade-up"
+          data-aos-duration="500"
+          data-aos-delay={`${10}`}
+          data-aos-easing="ease-in-sine"
+        >
+          Our Team
+        </h5>
+        <div className="lg:flex lg:gap-20 xl:gap-24 ">
+          <div className="lg:w-1/2">
+            <h2
+              className="heading pr-6"
               data-aos="fade-up"
               data-aos-duration="500"
-              data-aos-delay={`${150}`}
+              data-aos-delay={`${40}`}
               data-aos-easing="ease-in-sine"
             >
-              <p className="text-paragraph-1">
-                Pellentesque etiam blandit in tincidunt at donec. Eget ipsum
-                dignissim placerat nisi, adipiscing mauris non purus parturient.
-              </p>
-            </div>
+              Meet our leading and strong team
+            </h2>
           </div>
+          <div
+            className="lg:w-1/2 lg:pl-20"
+            data-aos="fade-up"
+            data-aos-duration="500"
+            data-aos-delay={`${150}`}
+            data-aos-easing="ease-in-sine"
+          >
+            <p className="text-paragraph-1">
+              Pellentesque etiam blandit in tincidunt at donec. Eget ipsum
+              dignissim placerat nisi, adipiscing mauris non purus parturient.
+            </p>
+          </div>
+        </div>
 
-          <div className="flex gap-2 flex-wrap justify-between mt-12">
-            {OurTeam.map((item, index) => (
-              <div
+        <div className="grid lg:grid-cols-3 grid-cols-2 gap-4 mt-12">
+          {OurTeam.map((item, index) => (
+            <div
+              key={index}
+              data-aos="fade-left"
+              data-aos-duration="500"
+              data-aos-delay={`${300 + index * 100}`}
+              data-aos-easing="ease-in-sine"
+              className="w-"
+            >
+              <ProfileOurTeamCard
                 key={index}
-                data-aos="fade-left"
-                data-aos-duration="500"
-                data-aos-delay={`${300 + index * 100}`}
-                data-aos-easing="ease-in-sine"
-              >
-                <ProfileOurTeamCard
-                  key={index}
-                  img={item.img}
-                  name={item.name}
-                  grade={item.grade}
-                />
-              </div>
-            ))}
-          </div>
+                img={item.img}
+                name={item.name}
+                grade={item.grade}
+              />
+            </div>
+          ))}
         </div>
       </div>
     )
@@ -214,7 +213,7 @@ export default function aboutUs() {
 
   const renderInterest = () => {
     return (
-      <div className="lg:my-[90px] my-8 px-4 lg:px-8 xl:px-0">
+      <div className="lg:my-[90px] my-8 lg:px-8 xl:px-0">
         <div className="lg:flex  lg:gap-20 xl:gap-24 justify-between items-center">
           <h2
             className="heading lg:w-1/3 w-4/5 mb-4 lg:mb-0"
@@ -245,7 +244,7 @@ export default function aboutUs() {
 
   return (
     <Layout title="About Us" content="We are the one">
-      <div className="container mx-auto px-2 lg:px-0">
+      <div className="container mx-auto px-6 lg:px-0">
         {renderBanner()}
         {renderOurMission()}
         {renderOurTeam()}
