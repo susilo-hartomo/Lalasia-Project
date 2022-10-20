@@ -114,7 +114,7 @@ function ArticleDetail(props) {
         <h2 data-aos="fade-up" className="heading md:mb-0 mb-4 text-center">
           Maybe you're interested
         </h2>
-        <div className="flex flex-row pb-[180px]" data-aos="fade-up">
+        <div className="lg:flex flex-row pb-[180px]" data-aos="fade-up">
           {
             BlogData.map((item, i) => (
               i < 3 ? <ArticleCardHorizontal
