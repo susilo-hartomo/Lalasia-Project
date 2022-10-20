@@ -2,9 +2,9 @@ name: Integration
 
 on:
   push:
-    branches: [main]
+    branches: [rofi]
   pull_request:
-    branches: [main]
+    branches: [rofi]
 
 jobs:
   build:
