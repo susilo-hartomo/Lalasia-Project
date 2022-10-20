@@ -40,7 +40,7 @@ const index: NextPage<props> = ({ twolatestnews, allnews }) => {
           className="text-center md:w-1/2 w-11/12 mx-auto md:px-4 text-paragraph-1"
         >
           We display product based on latest products we have, if you want to
-          see old products please enter the name of the item
+          see old products please enter the name of the item.
         </p>
       </div>
     )
