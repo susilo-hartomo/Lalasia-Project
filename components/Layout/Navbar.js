@@ -5,7 +5,7 @@ import { useRouter } from 'next/router'
 import Hamburger from 'hamburger-react'
 
 import { brandImg, brandText } from '../../assets/images'
-import { humbergerIcn, cartIcn, userIcn, closeIcn } from '../../assets/icons'
+import { cartIcn, userIcn } from '../../assets/icons'
 
 import { navlist } from '../../constants'
 
@@ -13,9 +13,18 @@ export default function Navbar() {
   const router = useRouter()
   const [isShowMobileNavbar, setIsShowMobileNavbar] = useState(false)
   const [scrollTop, setScrollTop] = useState(0)
-  const [windowSize, setWindowSize] = useState(0)
+  const [isScrollUp, setIsScrollUp] = useState(false)
+  const [windowSize, setWindowSize] = useState({
+    innerWidth: 0,
+    innerHeight: 0,
+  })
 
   const onScroll = (e) => {
+    if (scrollTop > 125 && e.target.documentElement.scrollTop < scrollTop) {
+      setIsScrollUp(true)
+    } else {
+      setIsScrollUp(false)
+    }
     setScrollTop(e.target.documentElement.scrollTop)
   }
 
@@ -29,7 +38,7 @@ export default function Navbar() {
       setWindowSize(getWindowSize())
     }
 
-    if (!windowSize) handleWindowResize()
+    if (!windowSize.innerHeight) handleWindowResize()
 
     window.addEventListener('scroll', onScroll)
     window.addEventListener('resize', handleWindowResize)
@@ -74,10 +83,11 @@ export default function Navbar() {
     return (
       <nav
         className={`lg:flex h-full w-full lg:w-auto lg:static z-50 top-[74px] min-h-screen lg:min-h-fit p-4 lg:p-0  ${
-          windowSize.innerWidth < 800 &&
-          (isShowMobileNavbar
-            ? 'translate-x-0 duration-1000 ease-in-out lg:traslate-0 left-0 absolute bg-white'
-            : 'left-full translate-x-full duration-1000 ease-in-out absolute')
+          windowSize.innerWidth < 800
+            ? isShowMobileNavbar
+              ? 'translate-x-0 duration-1000 ease-in-out lg:traslate-0 left-0 absolute bg-white'
+              : 'left-full translate-x-full duration-1000 ease-in-out absolute'
+            : null
         }`}
       >
         {navlist.map((item, index) => (
@@ -156,7 +166,7 @@ export default function Navbar() {
   return (
     <header
       className={`border-b-2 border-solid border-light-white w-screen ${
-        scrollTop > 125
+        isScrollUp
           ? 'fixed bg-white transform ease-in-out duration-1000 -top-[200px] z-50 translate-y-[200px]'
           : 'relative'
       }`}
