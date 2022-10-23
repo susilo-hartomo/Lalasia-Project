@@ -82,7 +82,7 @@ export default function Navbar() {
     const timeDelay = [100, 150, 200, 300, 500, 700]
     return (
       <nav
-        className={`lg:flex h-full w-full lg:w-auto lg:static z-50 top-[74px] min-h-screen lg:min-h-fit p-4 lg:p-0  ${
+        className={`lg:flex lg:flex-1 lg:justify-center h-full w-full lg:w-auto lg:static z-50 top-[74px] min-h-screen lg:min-h-fit p-4 lg:p-0  ${
           windowSize.innerWidth < 800
             ? isShowMobileNavbar
               ? 'translate-x-0 duration-1000 ease-in-out lg:traslate-0 left-0 absolute bg-white'
@@ -127,12 +127,28 @@ export default function Navbar() {
       }`}
     >
       <div className="lg:flex items-center">
-        <div className="cursor-pointer">
-          <Image src={cartIcn} alt="chart icon" width={30} height={30} />
-        </div>
-        <div className="lg:ml-6 mt-6 lg:mt-0 cursor-pointer">
-          <Image src={userIcn} alt="user icon" width={30} height={30} />
-        </div>
+        <Link href={'/cart'}>
+          <a>
+            <div className="cursor-pointer flex items-center">
+              <Image
+                src={cartIcn}
+                alt="chart icon"
+                width={30}
+                height={30}
+                className="text-red-500"
+              />
+              <p className="lg:hidden h-full ml-4 paragraph par-1">Cart</p>
+            </div>
+          </a>
+        </Link>
+        <Link href={'/profile'}>
+          <a>
+            <div className="lg:ml-6 mt-6 lg:mt-0 cursor-pointer flex items-center">
+              <Image src={userIcn} alt="user icon" width={30} height={30} />
+              <p className="lg:hidden h-full ml-4 paragraph par-1"> Profile</p>
+            </div>
+          </a>
+        </Link>
       </div>
     </div>
   )
