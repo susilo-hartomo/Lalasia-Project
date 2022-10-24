@@ -19,7 +19,6 @@ import { articles } from 'constants/articles'
 import ArticleCard from '@/components/card/ArticleCard'
 import ArticlesSlick from '@/components/slick/ArticlesSlick'
 import FormSearch from '@/components/items/Search'
-import FilterButton from '@/components/items/FilterButton'
 
 export default function Home() {
   const renderBanner = () => {
