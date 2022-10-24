@@ -82,7 +82,7 @@ export default class ProductSlick extends Component {
           settings: {
             slidesToShow: 1,
             slidesToScroll: 1,
-            centerPadding: '10px',
+            centerPadding: '44px',
             nextArrow: null,
             prevArrow: null,
           },
@@ -91,20 +91,22 @@ export default class ProductSlick extends Component {
     }
 
     return (
-      <div className="my-12">
-        <Slider {...settings}>
-          {products.map((item, i) => (
-            <ProductCard
-              key={i}
-              img={item.img}
-              category={item.category}
-              name={item.name}
-              desc={item.desc}
-              price={item.price}
-            />
-          ))}
-        </Slider>
-      </div>
+      <Slider {...settings}>
+        {products.map((item, i) => (
+          <ProductCard
+            key={i}
+            img={item.img}
+            category={item.category}
+            name={item.name}
+            desc={item.desc}
+            price={item.price}
+            responsiveParent={'w-[220px] h-full lg:w-[394px]'}
+            responsiveImgParent={
+              'w-[220px] h-[194px] lg:w-[394px] lg:h-[360px]'
+            }
+          />
+        ))}
+      </Slider>
     )
   }
 }
