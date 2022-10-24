@@ -31,7 +31,7 @@ export default function Home() {
               <Image src={abstractStars} alt="Lalasia stars" />
             </span>
           </h1>
-          <div className="absolute top-1 left-8 lg:mx-[100px] w-[83.43px] h-[83.43px] lg:w-[249.07px] lg:h-[249.07px]">
+          <div className="absolute top-1 lg:top-16 -left-8 lg:mx-[100px] w-[83.43px] h-[83.43px] lg:w-[249.07px] lg:h-[249.07px]">
             <Image src={spiral} alt="Lalasia spiral" />
           </div>
           <p className="relative text-center mx-auto  lg:w-[796px] paragraph par1 lg:px-4 mt-[30px]">
