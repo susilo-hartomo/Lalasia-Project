@@ -23,7 +23,7 @@ import FormSearch from '@/components/items/Search'
 export default function Home() {
   const renderBanner = () => {
     return (
-      <div className="container mx-auto relative">
+      <div className="container mx-auto relative px-6 lg:px-0">
         <div className="lg:mb-24 mb-12">
           <h1 className="heading text-center lg:w-[724px] mx-auto lg:mt-[100px] mt-[50px] relative">
             Discover Furniture With High Quality Wood
@@ -42,7 +42,7 @@ export default function Home() {
           </p>
         </div>
         <div className="relative">
-          <div className="lg:absolute z-10 lg:-top-24 lg:w-full w-[327px] lg:left-auto lg:right-auto left-8 -top-32">
+          <div className="lg:absolute z-10 lg:-top-24 w-full lg:left-auto lg:right-auto left-8 -top-32">
             <div className="flex align-middle justify-center items-baseline">
               <FormSearch onClick={() => console.log('search product')} />
             </div>
@@ -57,7 +57,7 @@ export default function Home() {
 
   const renderBenefit = () => {
     return (
-      <div className="container mx-auto relative lg:mt-44 mt-24">
+      <div className="container mx-auto relative lg:mt-44 mt-24 px-6 lg:px-0">
         <div className="lg:flex flex-row justify-between items-center lg:px-0">
           <div className="lg:w-[427px] w-full mb-4 lg:mb-0">
             <h5 className="heading text-secondary-1 mb-4">Benefits</h5>
@@ -104,7 +104,7 @@ export default function Home() {
 
   const renderOurProduct = () => {
     return (
-      <div className="container mx-auto lg:mt-44 mt-24">
+      <div className="container mx-auto lg:mt-44 mt-24 px-6 lg:px-0">
         <div className="lg:flex justify-between">
           <div>
             <div className="lg:w-[511px] lg:h-[151px] ">
@@ -136,7 +136,7 @@ export default function Home() {
               <CountingDesc total={483} desc="Happy Client" />
               <CountingDesc total={150} prefix="+" desc="Project Finished" />
             </div>
-            <div className="mt-[58px]">
+            <div className="lg:mt-[58px] mt-6">
               <Image src={ourProduct2} alt={'product2'} />
             </div>
           </div>
@@ -147,18 +147,17 @@ export default function Home() {
 
   const renderTestimonial = () => {
     return (
-      <div className="lg:mt-44 mt-24 ">
+      <div className="lg:mt-44 mt-24 px-6 lg:px-0">
         <div className="mb-7 text-center">
           <h5 className="text-secondary-1">Testimonials</h5>
           <h2 className="heading font-bold">What our customer say</h2>
         </div>
-        <div className="lg:w-[656px] h-[54px] w-[327px] mx-auto">
+        <div className="lg:w-[656px] h-[54px] w-full mx-auto">
           <p className="lg:text-center text-left text-paragraph-1">
             Pellentesque etiam blandit in tincidunt at donec. Eget ipsum
             dignissim placerat nisi, adipiscing mauris non purus parturient.
           </p>
         </div>
-
         <TestimoniSlick />
       </div>
     )
@@ -166,7 +165,7 @@ export default function Home() {
 
   const renderArticles = () => {
     return (
-      <div className="container mx-auto lg:mt-44 lg:px-0 mt-24">
+      <div className="container mx-auto lg:mt-44 lg:px-0 mt-24 px-6 lg:px-0">
         <p className="text-secondary-1">Articles</p>
         <div className="lg:flex flex-row justify-between gap-8">
           <div className="lg:w-1/2 w-full">
@@ -204,7 +203,7 @@ export default function Home() {
 
   const renderJoinWithUs = () => {
     return (
-      <div className="container lg:flex lg:mt-[280px] mt-24 flex-row justify-between">
+      <div className="container lg:flex lg:mt-[280px] mt-24 flex-row justify-between px-6 lg:px-0">
         <h2
           className="font-bold mb-4 lg:mb-0"
           data-aos="zoom-out-up"
@@ -233,15 +232,13 @@ export default function Home() {
 
   return (
     <Layout>
-      <div className="px-6 lg:px-0">
-        {renderBanner()}
-        {renderBenefit()}
-        {renderProduct()}
-        {renderOurProduct()}
-        {renderTestimonial()}
-        {renderArticles()}
-        {renderJoinWithUs()}
-      </div>
+      {renderBanner()}
+      {renderBenefit()}
+      {renderProduct()}
+      {renderOurProduct()}
+      {renderTestimonial()}
+      {renderArticles()}
+      {renderJoinWithUs()}
     </Layout>
   )
 }
