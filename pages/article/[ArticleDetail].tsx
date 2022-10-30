@@ -15,10 +15,6 @@ function ArticleDetail(props) {
   const [image, setImage] = useState('')
   const { articleId } = props
 
-  React.useEffect(() => {
-    AOS.init()
-  }, [])
-
   return (
     <Layout title={'Article Detail'} content={'Article'}>
       <div className="container mx-auto px-6 lg:px-0" data-aos="fade-up">
@@ -64,7 +60,7 @@ function ArticleDetail(props) {
           </div>
         </div>
         <div data-aos="fade-up">
-          <h3 className="pt-[50px] bold md:text-3xl text-base font-bold text-title-1 capitalize">
+          <h3 className="lg:pt-[50px] bold md:text-3xl text-base font-bold text-title-1 capitalize">
             bedroom collection
           </h3>
           <div className="lg:flex flex-row pt-[15px]">
@@ -92,7 +88,7 @@ function ArticleDetail(props) {
           <h3 className="pt-[50px] bold md:text-3xl text-base font-bold text-title-1 capitalize">
             The Knot
           </h3>
-          <div className="lg:flex flex-row pt-[15px] pb-[180px]">
+          <div className="lg:flex flex-row pt-[15px] pb-[50px] lg:pb-[180px]">
             <div className="lg:w-1/2 mr-[30px]" data-aos="fade-right">
               <p className="paragraph text-paragraph-1">
                 Nisi quam mi est et et. Lectus sed imperdiet non vestibulum volutpat tellus odio aliquam. Eu rutrum tincidunt risus felis sagittis, consequat, iaculis tortor bibendum. At nisl, diam a sagittis nulla nec at. Faucibus ultricies pharetra, faucibus erat varius ornare. Viverra pharetra nibh leo et purus in et. Amet felis lectus consectetur duis ut orci.
@@ -114,18 +110,18 @@ function ArticleDetail(props) {
         <h2 data-aos="fade-up" className="heading md:mb-0 mb-4 text-center">
           Maybe you're interested
         </h2>
-        <div className="lg:flex flex-row pb-[180px]" data-aos="fade-up">
+        <div className="lg:flex flex-row pb-[50px] lg:pb-[180px]" data-aos="fade-up">
           {
             BlogData.map((item, i) => (
               i < 3 ? <ArticleCardHorizontal
+                key={i}
                 category={item.category}
                 title={item.title}
                 summary={item.summary}
                 author={item.author}
                 date={item.date}
-                key={i}
                 index={i}
-              /> : <></>
+              /> : undefined
             ))
           }
         </div>
@@ -135,8 +131,16 @@ function ArticleDetail(props) {
   )
 }
 
-export const getServerSideProps = async (context) => {
-  const { ArticleDetail: articleId } = context.query;    // Your dynamic page is [storyId].js
+export const getStaticPaths = async () => {
+
+  return {
+    paths: [], //indicates that no page needs be created at build time
+    fallback: 'blocking' //indicates the type of fallback
+  }
+}
+
+export const getStaticProps = async ({ params }) => {
+  const { ArticleDetail: articleId } = params;    // Your dynamic page is [storyId].js
 
   return {
     props: { articleId }

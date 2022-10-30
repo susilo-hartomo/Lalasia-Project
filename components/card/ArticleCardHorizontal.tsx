@@ -6,7 +6,7 @@ function ArticleCardHorizontal(props) {
     const { image, category, title, summary, author, date, index } = props
 
     return (
-        <div className="lg:w-1/3 p-2">
+        <div className="lg:w-1/3 lg:p-2">
             <div className="h-[150px] lg:h-[360px] relative mt-[50px]">
                 <Image
                     src={image ? image : `/article_card_${index + 1}.png`}
