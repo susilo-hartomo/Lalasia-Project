@@ -72,3 +72,20 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 - daily top new : (asc by created-at and dec by views_perday limit 2) (bikin cron job reset views-perday)
 - get tranding topic : (asc by total_views and topic selected limit 5 with get more/pagination)
 ```
+
+3. Cart
+
+```
+- crud cart /api/carts
+```
+
+4. checkout
+
+```
+a. dari cart bisa diproses checkout
+b. beli langsung
+
+- create oreder item (daftar product)
+- create payment info
+- create order detail (menampung order item dan payment)
+```
