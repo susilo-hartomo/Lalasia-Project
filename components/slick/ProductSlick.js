@@ -82,7 +82,7 @@ export default class ProductSlick extends Component {
           settings: {
             slidesToShow: 1,
             slidesToScroll: 1,
-            centerPadding: '44px',
+            centerPadding: '55px',
             nextArrow: null,
             prevArrow: null,
           },
@@ -100,9 +100,9 @@ export default class ProductSlick extends Component {
             name={item.name}
             desc={item.desc}
             price={item.price}
-            responsiveParent={'w-[220px] h-full lg:w-[394px]'}
+            responsiveParent={'w-[97%] h-full lg:w-[394px]'}
             responsiveImgParent={
-              'w-[220px] h-[194px] lg:w-[394px] lg:h-[360px]'
+              'w-[97%] h-[194px] lg:w-[394px] lg:h-[360px] object-scale-down'
             }
           />
         ))}
